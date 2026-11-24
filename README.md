@@ -32,14 +32,51 @@ streamlit run app.py                              # dashboard with a scenario pi
 ```
 Files the agents wrote are saved to `./output/<scenario>/` (report in `reports/`, findings in `findings/`).
 
-## Where each Deep Agents concept lives
-| Concept | Where |
+## How LangChain, LangGraph and Deep Agents are used
+
+The project uses three layers that build on each other:
+
+```
+Deep Agents (deepagents)   -> the agent "recipe": planning, virtual files, subagents
+   built on LangChain       -> models, tools, middleware (retry, fallback, todo list)
+   running on LangGraph     -> the graph that executes the agent loop, holds state, streams steps
+```
+
+### Deep Agents - `deepagents`
+| What | Where |
 |---|---|
-| Planning (`write_todos`) | built in; prompt in `prompts.py` (SUPERVISOR_PROMPT) |
-| Virtual filesystem | built in; agents write `/findings/*` and `/reports/*`; saved by `save_outputs()` in `agent.py` |
-| Subagents | `subagents=[...]` in `agent.py`, each with own prompt + tools; the security analyst is used only when needed |
-| Custom tools | `tools.py`: `make_tools(folder)` builds tools bound to one scenario (logs, metrics, processes, services, disk, recent changes, network) |
-| Scenarios | `scenarios.py` (title + problem text) and `generate_sample_data.py` (the data) |
+| `create_deep_agent(...)` builds the supervisor with its subagents | [agent.py](agent.py) - `build_agent()` (line ~134) |
+| Subagent definitions (name, description, prompt, tools, middleware) | [agent.py](agent.py) - `subagents = [...]` (line ~137) |
+| Built-in `task` tool (supervisor delegates to a subagent) | provided by Deep Agents; how to use it is in [prompts.py](prompts.py) `SUPERVISOR_PROMPT` |
+| Built-in virtual filesystem (`write_file`, `read_file`, `edit_file`, `ls`) used for `/findings/*` and `/reports/*` | provided by Deep Agents; files are copied to disk by `save_outputs()` in [agent.py](agent.py) |
+| Prompts for supervisor and subagents | [prompts.py](prompts.py) |
+
+### LangChain - `langchain`, `langchain_core`, `langchain_google_genai`, `langchain_openai`, `langchain_groq`
+| What | Where |
+|---|---|
+| `@tool` - turns Python functions into tools the model can call (logs, metrics, processes, services, disk, changes, network) | [tools.py](tools.py) - `make_tools()` |
+| Chat models: `ChatGoogleGenerativeAI` (Gemini, main), `ChatGroq` (optional), `ChatOpenAI` (backup, also used for OpenRouter) | [agent.py](agent.py) - `build_model()`, `build_backup_model()` |
+| `InMemoryRateLimiter` - keeps calls under the free-tier requests-per-minute limit | [agent.py](agent.py) - `build_model()` |
+| `ModelRetryMiddleware` - retries rate limits / temporary errors, prints a line when waiting | [agent.py](agent.py) - `build_retry()`, `_is_retryable()` |
+| `ModelFallbackMiddleware` - switches to the backup model if the main one still fails | [agent.py](agent.py) - `build_middleware()` |
+| `TodoListMiddleware` - gives the supervisor the `write_todos` planning tool (the "Plan" panel) | [agent.py](agent.py) - `build_agent()` |
+
+### LangGraph - `langgraph` (used through Deep Agents, not imported directly)
+| What | Where |
+|---|---|
+| The agent returned by `create_deep_agent` is a LangGraph `CompiledStateGraph` (model node -> tools node -> model ... until done) | [agent.py](agent.py) - `build_agent()` |
+| `agent.stream(..., stream_mode="values")` - runs the graph and yields the full state after every step | [agent.py](agent.py) - `stream_investigation()` |
+| `recursion_limit` - LangGraph's cap on the number of steps in one run | [agent.py](agent.py) - `stream_investigation()` |
+| Graph state: `messages` (conversation + tool calls), `todos` (plan), `files` (virtual files) | read in [run_cli.py](run_cli.py) and [app.py](app.py) while streaming; files saved by `save_outputs()` |
+| Each subagent runs as its own smaller graph inside the supervisor's `task` tool call | built by Deep Agents from the `subagents` list |
+
+### Other files
+| File | Role |
+|---|---|
+| [scenarios.py](scenarios.py) | The incidents you can pick (title + problem description) |
+| [generate_sample_data.py](generate_sample_data.py) | Creates the simulated logs/metrics in `sample_data/<scenario>/` |
+| [run_cli.py](run_cli.py) | Terminal runner (`--scenario`, `--list`) |
+| [app.py](app.py) | Streamlit dashboard (scenario picker, live plan, activity, report download) |
 
 ## The planted incidents (what a good report should find)
 **runaway_job** - Crontab edited at 08:57 -> `report_export.py --full` ran at 09:00 with an unbounded query -> CPU/DB pool
