@@ -84,17 +84,35 @@ def _is_retryable(exc: Exception) -> bool:
     return retry
 
 
+OPENROUTER_URL = "https://openrouter.ai/api/v1"
+
+
+def _backup_settings():
+    """Backup model settings. OpenRouter keys (sk-or-...) use OpenRouter's OpenAI-compatible endpoint."""
+    key = os.getenv("OPENAI_API_KEY", "")
+    is_openrouter = key.startswith("sk-or-")
+    base_url = os.getenv("OPENAI_BASE_URL") or (OPENROUTER_URL if is_openrouter else None)
+    model = os.getenv("OPENAI_MODEL") or "gpt-5-mini"
+    if is_openrouter and "/" not in model:  # OpenRouter names models as "<provider>/<model>"
+        model = f"openai/{model}"
+    return key, base_url, model, is_openrouter
+
+
 def build_backup_model():
-    """Optional paid backup: used only when OPENAI_API_KEY is set and the main model fails."""
-    if not os.getenv("OPENAI_API_KEY"):
+    """Optional backup: used only when OPENAI_API_KEY is set and the main model fails."""
+    key, base_url, model, _ = _backup_settings()
+    if not key:
         return None
     from langchain_openai import ChatOpenAI
 
-    return ChatOpenAI(model=os.getenv("OPENAI_MODEL", "gpt-5-mini"), max_retries=2, timeout=120)
+    return ChatOpenAI(model=model, base_url=base_url, max_retries=2, timeout=120)
 
 
 def backup_label() -> str:
-    return f"openai / {os.getenv('OPENAI_MODEL', 'gpt-5-mini')}" if os.getenv("OPENAI_API_KEY") else "none"
+    key, _, model, is_openrouter = _backup_settings()
+    if not key:
+        return "none"
+    return f"{'openrouter' if is_openrouter else 'openai'} / {model}"
 
 
 def build_middleware():
