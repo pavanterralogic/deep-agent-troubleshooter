@@ -34,41 +34,106 @@ Files the agents wrote are saved to `./output/<scenario>/` (report in `reports/`
 
 ## How LangChain, LangGraph and Deep Agents are used
 
-The project uses three layers that build on each other:
+Three layers build on each other: **Deep Agents** (planning, virtual files, subagents) is built on
+**LangChain** (models, tools, middleware), which runs on **LangGraph** (the graph that executes the
+agent loop and holds its state). Below are the key lines of each.
 
+### Deep Agents
+
+**1. Create the supervisor agent** - [agent.py](agent.py) `build_agent()`
+```python
+from deepagents import create_deep_agent
+
+return create_deep_agent(
+    model=build_model(),
+    tools=[],                          # supervisor has no domain tools: it must delegate
+    system_prompt=SUPERVISOR_PROMPT,
+    subagents=subagents,
+    middleware=[TodoListMiddleware(), *build_middleware()],
+)
 ```
-Deep Agents (deepagents)   -> the agent "recipe": planning, virtual files, subagents
-   built on LangChain       -> models, tools, middleware (retry, fallback, todo list)
-   running on LangGraph     -> the graph that executes the agent loop, holds state, streams steps
+
+**2. Subagents** - each has its own prompt, tools and isolated context - [agent.py](agent.py)
+```python
+subagents = [
+    {
+        "name": "log-analyzer",
+        "description": "Analyzes application, syslog, nginx and auth logs: ...",
+        "system_prompt": LOG_ANALYZER_PROMPT,
+        "tools": t.LOG_TOOLS,
+    },
+    # server-diagnostician, security-analyst, root-cause-analyst, solution-advisor ...
+]
 ```
 
-### Deep Agents - `deepagents`
-| What | Where |
-|---|---|
-| `create_deep_agent(...)` builds the supervisor with its subagents | [agent.py](agent.py) - `build_agent()` (line ~134) |
-| Subagent definitions (name, description, prompt, tools, middleware) | [agent.py](agent.py) - `subagents = [...]` (line ~137) |
-| Built-in `task` tool (supervisor delegates to a subagent) | provided by Deep Agents; how to use it is in [prompts.py](prompts.py) `SUPERVISOR_PROMPT` |
-| Built-in virtual filesystem (`write_file`, `read_file`, `edit_file`, `ls`) used for `/findings/*` and `/reports/*` | provided by Deep Agents; files are copied to disk by `save_outputs()` in [agent.py](agent.py) |
-| Prompts for supervisor and subagents | [prompts.py](prompts.py) |
+**3. Delegation with the built-in `task` tool, and shared virtual files** - [prompts.py](prompts.py) `SUPERVISOR_PROMPT`
+```text
+2. DELEGATE (one subagent per `task` call, give it a clear, self-contained instruction):
+   a. `log-analyzer`          -> writes /findings/log_analysis.md
+   b. `server-diagnostician`  -> writes /findings/server_diagnostics.md
+   c. `security-analyst`      -> writes /findings/security_analysis.md. Delegate to it ONLY IF ...
+```
+The agents write findings with the built-in `write_file` tool; the supervisor reads them with `read_file`.
 
-### LangChain - `langchain`, `langchain_core`, `langchain_google_genai`, `langchain_openai`, `langchain_groq`
-| What | Where |
-|---|---|
-| `@tool` - turns Python functions into tools the model can call (logs, metrics, processes, services, disk, changes, network) | [tools.py](tools.py) - `make_tools()` |
-| Chat models: `ChatGoogleGenerativeAI` (Gemini, main), `ChatGroq` (optional), `ChatOpenAI` (backup, also used for OpenRouter) | [agent.py](agent.py) - `build_model()`, `build_backup_model()` |
-| `InMemoryRateLimiter` - keeps calls under the free-tier requests-per-minute limit | [agent.py](agent.py) - `build_model()` |
-| `ModelRetryMiddleware` - retries rate limits / temporary errors, prints a line when waiting | [agent.py](agent.py) - `build_retry()`, `_is_retryable()` |
-| `ModelFallbackMiddleware` - switches to the backup model if the main one still fails | [agent.py](agent.py) - `build_middleware()` |
-| `TodoListMiddleware` - gives the supervisor the `write_todos` planning tool (the "Plan" panel) | [agent.py](agent.py) - `build_agent()` |
+**4. Virtual files -> real disk** - [agent.py](agent.py) `save_outputs()`
+```python
+for path, entry in (state.get("files") or {}).items():   # e.g. "/reports/troubleshooting_report.md"
+    target = base / path.lstrip("/")
+    target.write_text(file_text(entry), encoding="utf-8")
+```
 
-### LangGraph - `langgraph` (used through Deep Agents, not imported directly)
-| What | Where |
-|---|---|
-| The agent returned by `create_deep_agent` is a LangGraph `CompiledStateGraph` (model node -> tools node -> model ... until done) | [agent.py](agent.py) - `build_agent()` |
-| `agent.stream(..., stream_mode="values")` - runs the graph and yields the full state after every step | [agent.py](agent.py) - `stream_investigation()` |
-| `recursion_limit` - LangGraph's cap on the number of steps in one run | [agent.py](agent.py) - `stream_investigation()` |
-| Graph state: `messages` (conversation + tool calls), `todos` (plan), `files` (virtual files) | read in [run_cli.py](run_cli.py) and [app.py](app.py) while streaming; files saved by `save_outputs()` |
-| Each subagent runs as its own smaller graph inside the supervisor's `task` tool call | built by Deep Agents from the `subagents` list |
+### LangChain
+
+**1. Tools** - a Python function becomes a tool the model can call; the docstring tells the model how to use it - [tools.py](tools.py)
+```python
+from langchain_core.tools import tool
+
+@tool
+def search_logs(log_name: str, pattern: str, max_matches: int = 25) -> str:
+    """Search a log with a case-insensitive regex and return matching lines with line numbers."""
+```
+
+**2. Chat models** - main model (Gemini) and optional backup (OpenAI / OpenRouter) - [agent.py](agent.py) `build_model()`, `build_backup_model()`
+```python
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
+
+ChatGoogleGenerativeAI(model=model_name(), temperature=0, rate_limiter=limiter, max_retries=0, timeout=120)
+ChatOpenAI(model=model, base_url=base_url, max_retries=2, timeout=120)
+```
+
+**3. Rate limiter** - stays under the free-tier requests-per-minute limit - [agent.py](agent.py) `build_model()`
+```python
+from langchain_core.rate_limiters import InMemoryRateLimiter
+
+limiter = InMemoryRateLimiter(requests_per_second=rpm / 60, check_every_n_seconds=0.5, max_bucket_size=1)
+```
+
+**4. Middleware** - planning tool, retries, fallback to the backup model - [agent.py](agent.py)
+```python
+from langchain.agents.middleware import ModelFallbackMiddleware, ModelRetryMiddleware, TodoListMiddleware
+
+TodoListMiddleware()                       # gives the supervisor `write_todos` (the "Plan" panel)
+ModelRetryMiddleware(max_retries=4, retry_on=_is_retryable, initial_delay=15.0, max_delay=65.0)
+ModelFallbackMiddleware(backup)            # if Gemini still fails, use the backup model
+```
+
+### LangGraph
+
+LangGraph is not imported directly: `create_deep_agent` returns a LangGraph `CompiledStateGraph`.
+
+**1. Run the graph and stream every step** - [agent.py](agent.py) `stream_investigation()`
+```python
+payload = {"messages": [{"role": "user", "content": task}]}
+yield from agent.stream(payload, stream_mode="values", config={"recursion_limit": 150})
+```
+
+**2. Read the graph state while it runs** (`todos`, `messages`, `files`) - [run_cli.py](run_cli.py) (same in [app.py](app.py))
+```python
+for state in stream_investigation(agent, task):
+    todos = state.get("todos")             # the supervisor's plan
+    msgs = state.get("messages", [])       # AIMessage tool calls (e.g. `task log-analyzer`) and ToolMessage results
+```
 
 ### Other files
 | File | Role |
