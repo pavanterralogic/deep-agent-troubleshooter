@@ -13,6 +13,7 @@ except Exception:  # no secrets file locally: .env is used instead
     pass
 
 from agent import (
+    OLLAMA_URL,
     PROVIDER,
     api_key_var,
     backup_label,
@@ -80,7 +81,10 @@ with st.sidebar:
     st.header("Deep Agent prototype")
     st.caption("Supervisor + 5 subagents on simulated logs and metrics. Nothing touches a real server.")
     st.markdown(f"**Model:** `{PROVIDER}` / `{model_name()}`")
-    st.markdown(f"**{api_key_var()}:** " + ("✅ set" if os.getenv(api_key_var()) else "❌ missing (.env or Streamlit secrets)"))
+    if api_key_var():
+        st.markdown(f"**{api_key_var()}:** " + ("✅ set" if os.getenv(api_key_var()) else "❌ missing (.env or Streamlit secrets)"))
+    else:
+        st.markdown(f"**Ollama server:** `{OLLAMA_URL}` (local, no API key)")
     st.markdown(f"**Backup model:** `{backup_label()}`")
     st.divider()
     st.markdown(

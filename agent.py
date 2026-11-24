@@ -33,8 +33,9 @@ OUTPUT_DIR = ROOT / "output"
 DEFAULT_TASK = SCENARIOS[DEFAULT_SCENARIO]["task"]
 
 
-PROVIDER = os.getenv("LLM_PROVIDER", "gemini").lower()
-DEFAULT_MODELS = {"gemini": "gemini-3.5-flash-lite","groq": "openai/gpt-oss-120b"}
+PROVIDER = os.getenv("LLM_PROVIDER", "ollama").lower()
+DEFAULT_MODELS = {"ollama": "qwen3:8b", "gemini": "gemini-3.5-flash-lite", "groq": "openai/gpt-oss-120b"}
+OLLAMA_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 
 
 def model_name() -> str:
@@ -43,10 +44,25 @@ def model_name() -> str:
 
 
 def api_key_var() -> str:
-    return "GOOGLE_API_KEY" if PROVIDER == "gemini" else "GROQ_API_KEY"
+    """Env var holding the API key; empty for Ollama (local, no key needed)."""
+    return {"gemini": "GOOGLE_API_KEY", "groq": "GROQ_API_KEY"}.get(PROVIDER, "")
 
 
 def build_model():
+    if PROVIDER == "ollama":
+        from langchain_ollama import ChatOllama
+
+        # Local model served by Ollama: no API key, no rate limit.
+        # num_ctx: Ollama's default context window is too small for the agent's prompts + tool schemas.
+        # reasoning=False: skip the "thinking" phase of models like qwen3, much faster on a laptop CPU.
+        return ChatOllama(
+            model=model_name(),
+            base_url=OLLAMA_URL,
+            temperature=0,
+            num_ctx=int(os.getenv("OLLAMA_NUM_CTX", "16384")),
+            reasoning=os.getenv("OLLAMA_THINKING", "false").lower() == "true",
+            keep_alive="30m",
+        )
     if not os.getenv(api_key_var()):
         raise RuntimeError(f"{api_key_var()} is not set. Copy .env.example to .env and add your key.")
     # Free tiers cap requests per minute; the limiter spaces out calls so we stay under it.
@@ -63,12 +79,13 @@ def build_model():
         from langchain_groq import ChatGroq
 
         return ChatGroq(model=model_name(), temperature=0, rate_limiter=limiter)
-    raise RuntimeError(f"Unknown LLM_PROVIDER '{PROVIDER}'. Use 'gemini' or 'groq'.")
+    raise RuntimeError(f"Unknown LLM_PROVIDER '{PROVIDER}'. Use 'ollama', 'gemini' or 'groq'.")
 
 
 RETRYABLE_MARKERS = (
     "429", "rate_limit", "resource_exhausted", "quota",      # rate limits (per-minute quota)
     "500", "503", "unavailable", "overloaded", "timeout",     # temporary server problems
+    "connecterror", "connection refused",                     # Ollama still starting up
     "output_parse_failed", "tool_use_failed",                 # Groq: malformed model output
 )
 
@@ -97,20 +114,28 @@ def _backup_settings():
     return key, base_url, model, is_openrouter
 
 
+def backup_enabled() -> bool:
+    """Cloud backup is off by default with Ollama (everything stays local); opt in with ENABLE_CLOUD_BACKUP=true."""
+    if not os.getenv("OPENAI_API_KEY"):
+        return False
+    default = "false" if PROVIDER == "ollama" else "true"
+    return os.getenv("ENABLE_CLOUD_BACKUP", default).lower() == "true"
+
+
 def build_backup_model():
-    """Optional backup: used only when OPENAI_API_KEY is set and the main model fails."""
-    key, base_url, model, _ = _backup_settings()
-    if not key:
+    """Optional backup: used only when enabled and the main model fails."""
+    if not backup_enabled():
         return None
+    key, base_url, model, _ = _backup_settings()
     from langchain_openai import ChatOpenAI
 
     return ChatOpenAI(model=model, base_url=base_url, max_retries=2, timeout=120)
 
 
 def backup_label() -> str:
-    key, _, model, is_openrouter = _backup_settings()
-    if not key:
+    if not backup_enabled():
         return "none"
+    _, _, model, is_openrouter = _backup_settings()
     return f"{'openrouter' if is_openrouter else 'openai'} / {model}"
 
 

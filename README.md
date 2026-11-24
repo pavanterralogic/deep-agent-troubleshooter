@@ -15,12 +15,27 @@ User request -> Supervisor (plan + review)
 ```
 
 ## Setup
-```bash
-python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
-pip install -U -r requirements.txt
-cp .env.example .env                                   # add your free GOOGLE_API_KEY (aistudio.google.com/apikey)
-python generate_sample_data.py                         # optional: sample_data is already included
-```
+The model runs **locally with [Ollama](https://ollama.com)**: no API key, no cost, no rate limits, and
+no data leaves your machine.
+
+1. Install Ollama from https://ollama.com/download (Windows: run `OllamaSetup.exe`; Linux:
+   `curl -fsSL https://ollama.com/install.sh | sh`). It starts a local server on `http://localhost:11434`.
+2. Download a model that supports tool calling (~5 GB, needs ~8 GB free RAM):
+   ```bash
+   ollama pull qwen3:8b
+   ```
+3. Install the Python project:
+   ```bash
+   python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
+   pip install -U -r requirements.txt
+   cp .env.example .env                                   # defaults already point to Ollama + qwen3:8b
+   python generate_sample_data.py                         # optional: sample_data is already included
+   ```
+
+**Choosing a model** (set `LLM_MODEL` in `.env`): the model **must support tool calling**.
+`qwen3:8b` (default, good balance), `qwen2.5:7b` / `llama3.1:8b` (lighter), `qwen3:14b` (better
+reasoning, needs ~16 GB RAM or a GPU). On a laptop CPU a full investigation takes several minutes;
+with a GPU it is much faster. Gemini/Groq are still supported with `LLM_PROVIDER=gemini|groq`.
 
 ## Run
 ```bash
@@ -53,7 +68,7 @@ return create_deep_agent(
 )
 ```
 
-**What it does:** builds the **supervisor** - the "team lead" agent. It gets the model (Gemini), its instructions (`SUPERVISOR_PROMPT`), the list of subagents it may delegate to, and middleware (planning, retry, fallback). It has no log or metrics tools on purpose, so it cannot investigate by itself: it must plan, delegate, review and write the final report. Deep Agents automatically adds the `task` tool (to call subagents) and the file tools.
+**What it does:** builds the **supervisor** - the "team lead" agent. It gets the model (local Ollama), its instructions (`SUPERVISOR_PROMPT`), the list of subagents it may delegate to, and middleware (planning, retry, fallback). It has no log or metrics tools on purpose, so it cannot investigate by itself: it must plan, delegate, review and write the final report. Deep Agents automatically adds the `task` tool (to call subagents) and the file tools.
 
 **2. Subagents** - each has its own prompt, tools and isolated context - [agent.py](agent.py)
 ```python
@@ -104,25 +119,24 @@ def search_logs(log_name: str, pattern: str, max_matches: int = 25) -> str:
 
 **What it does:** gives the agents **hands**. The model cannot read files by itself; it can only ask to call a tool. `@tool` turns this function into a tool: the function name, parameters and docstring are sent to the model so it knows when and how to use it. When the model asks for `search_logs("auth", "Failed password")`, the code runs and the result goes back to the model. All tools read the simulated data in `sample_data/<scenario>/`.
 
-**2. Chat models** - main model (Gemini) and optional backup (OpenAI / OpenRouter) - [agent.py](agent.py) `build_model()`, `build_backup_model()`
+**2. Chat model** - local model served by Ollama - [agent.py](agent.py) `build_model()`
 ```python
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
 
-ChatGoogleGenerativeAI(model=model_name(), temperature=0, rate_limiter=limiter, max_retries=0, timeout=120)
-ChatOpenAI(model=model, base_url=base_url, max_retries=2, timeout=120)
+ChatOllama(model=model_name(), base_url=OLLAMA_URL, temperature=0,
+           num_ctx=16384, reasoning=False, keep_alive="30m")
 ```
 
-**What it does:** the **brain**. These classes connect to the AI provider (Gemini as the main, free model; OpenAI/OpenRouter as the optional backup) with one common interface, so the rest of the code does not care which provider is used. `max_retries=0` on Gemini turns off its silent retries so our retry middleware can show them.
+**What it does:** the **brain**. `ChatOllama` sends the conversation and tool definitions to the Ollama server running on your own machine and gets back text or tool calls - the same interface as any cloud model, so the rest of the code does not change. `num_ctx=16384` raises Ollama's small default context window so the long agent prompts fit; `reasoning=False` skips the slow "thinking" phase of qwen3; `keep_alive` keeps the model loaded in memory between calls. (Gemini/Groq via `ChatGoogleGenerativeAI`/`ChatGroq` are still available as alternatives.)
 
-**3. Rate limiter** - stays under the free-tier requests-per-minute limit - [agent.py](agent.py) `build_model()`
+**3. Rate limiter** - only for cloud free tiers - [agent.py](agent.py) `build_model()`
 ```python
 from langchain_core.rate_limiters import InMemoryRateLimiter
 
 limiter = InMemoryRateLimiter(requests_per_second=rpm / 60, check_every_n_seconds=0.5, max_bucket_size=1)
 ```
 
-**What it does:** the free Gemini tier allows only about 10 requests per minute. The limiter spaces out calls (by default 8 per minute) so the agent waits a few seconds between calls instead of being rejected.
+**What it does:** used only with Gemini/Groq, whose free tiers allow about 10 requests per minute. The limiter spaces out calls so they are not rejected. Ollama runs locally and has no limit, so it is not used there.
 
 **4. Middleware** - planning tool, retries, fallback to the backup model - [agent.py](agent.py)
 ```python
@@ -130,13 +144,13 @@ from langchain.agents.middleware import ModelFallbackMiddleware, ModelRetryMiddl
 
 TodoListMiddleware()                       # gives the supervisor `write_todos` (the "Plan" panel)
 ModelRetryMiddleware(max_retries=4, retry_on=_is_retryable, initial_delay=15.0, max_delay=65.0)
-ModelFallbackMiddleware(backup)            # if Gemini still fails, use the backup model
+ModelFallbackMiddleware(backup)            # optional: if the main model fails, use a backup model
 ```
 
 **What it does:** middleware wraps every model call, like a guard around it:
 - `TodoListMiddleware` adds the `write_todos` tool, so the supervisor writes and updates a **plan** (shown in the CLI and in the app's Plan panel).
-- `ModelRetryMiddleware` catches temporary errors (rate limit, overloaded server) and **retries** after waiting, printing a line so you know it is waiting, not stuck.
-- `ModelFallbackMiddleware` **switches to the backup model** if the main model still fails (e.g. the free daily quota is used up). Only active when a backup key is set.
+- `ModelRetryMiddleware` catches temporary errors (Ollama still starting, timeouts, rate limits) and **retries** after waiting, printing a line so you know it is waiting, not stuck.
+- `ModelFallbackMiddleware` **switches to a backup model** if the main model still fails. Off by default with Ollama so nothing leaves the machine; enable with `ENABLE_CLOUD_BACKUP=true` and `OPENAI_API_KEY`.
 
 ### LangGraph
 
@@ -188,7 +202,13 @@ To add your own scenario: add it to `scenarios.py`, write a generator function i
 that produces the same files, and run `python generate_sample_data.py`.
 
 ## Troubleshooting
-- **Rate limits on free tiers:** Gemini free tier allows ~10 requests/min and a daily cap; lower `LLM_REQUESTS_PER_MINUTE` if you see 429s. Groq free tier (`LLM_PROVIDER=groq`) is too small for Deep Agents prompts (413 errors).
+- **`Connection refused` / `ConnectError`:** Ollama is not running. Start the Ollama app (or `ollama serve`) and check `ollama list` shows your model.
+- **`model "qwen3:8b" not found`:** run `ollama pull qwen3:8b` (or the model in `LLM_MODEL`).
+- **`does not support tools`:** pick a model with tool calling (qwen3, qwen2.5, llama3.1). Models like gemma or phi without tool support will not work.
+- **Very slow / out of memory:** use a smaller model (`qwen2.5:7b`), lower `OLLAMA_NUM_CTX` to `12288`, close other apps. A GPU makes a big difference.
+- **Agent wanders or skips a step:** small local models are weaker than cloud models; try `qwen3:14b` or `OLLAMA_THINKING=true` if you have the RAM/time.
+- **Hosting:** Streamlit Community Cloud cannot run Ollama. Host the app on a machine (or company server/VM) that runs Ollama, e.g. `streamlit run app.py --server.address 0.0.0.0`, or point `OLLAMA_BASE_URL` at a shared Ollama server on your network.
+- **Rate limits on cloud free tiers:** Gemini free tier allows ~10 requests/min and a daily cap; lower `LLM_REQUESTS_PER_MINUTE` if you see 429s. Groq free tier (`LLM_PROVIDER=groq`) is too small for Deep Agents prompts (413 errors).
 - **Agent skips delegation or loops:** use a stronger tool-calling model; keep `temperature=0`.
 - **TypeError on `create_deep_agent` / subagent keys:** the library changes fast; run `pip install -U deepagents` and compare with the docs.
 
