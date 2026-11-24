@@ -53,6 +53,8 @@ return create_deep_agent(
 )
 ```
 
+**What it does:** builds the **supervisor** - the "team lead" agent. It gets the model (Gemini), its instructions (`SUPERVISOR_PROMPT`), the list of subagents it may delegate to, and middleware (planning, retry, fallback). It has no log or metrics tools on purpose, so it cannot investigate by itself: it must plan, delegate, review and write the final report. Deep Agents automatically adds the `task` tool (to call subagents) and the file tools.
+
 **2. Subagents** - each has its own prompt, tools and isolated context - [agent.py](agent.py)
 ```python
 subagents = [
@@ -66,6 +68,8 @@ subagents = [
 ]
 ```
 
+**What it does:** defines the **specialists**. Each subagent is a separate model conversation with its own instructions and only the tools it needs (the log analyzer gets log tools, the server diagnostician gets metrics tools, and so on). The `description` is what the supervisor reads to decide whom to call. Each subagent starts with a clean, isolated context, so long log output does not fill up the supervisor's memory - it only gets back a short summary.
+
 **3. Delegation with the built-in `task` tool, and shared virtual files** - [prompts.py](prompts.py) `SUPERVISOR_PROMPT`
 ```text
 2. DELEGATE (one subagent per `task` call, give it a clear, self-contained instruction):
@@ -75,12 +79,17 @@ subagents = [
 ```
 The agents write findings with the built-in `write_file` tool; the supervisor reads them with `read_file`.
 
+
+**What it does:** tells the supervisor the **order of work** and who writes which file. The `task` tool starts a subagent with an instruction and waits for its answer. Instead of passing long text back and forth, agents share results through **virtual files** (`/findings/*.md`): one agent writes, the next one reads. The rule for `security-analyst` makes the supervisor call it only when the findings look suspicious, which saves model calls.
+
 **4. Virtual files -> real disk** - [agent.py](agent.py) `save_outputs()`
 ```python
 for path, entry in (state.get("files") or {}).items():   # e.g. "/reports/troubleshooting_report.md"
     target = base / path.lstrip("/")
     target.write_text(file_text(entry), encoding="utf-8")
 ```
+
+**What it does:** the virtual files exist only in the agent's memory (its state) while it runs. After the run, this copies them to real files in `output/<scenario>/` so you can open the report and findings afterwards.
 
 ### LangChain
 
@@ -93,6 +102,8 @@ def search_logs(log_name: str, pattern: str, max_matches: int = 25) -> str:
     """Search a log with a case-insensitive regex and return matching lines with line numbers."""
 ```
 
+**What it does:** gives the agents **hands**. The model cannot read files by itself; it can only ask to call a tool. `@tool` turns this function into a tool: the function name, parameters and docstring are sent to the model so it knows when and how to use it. When the model asks for `search_logs("auth", "Failed password")`, the code runs and the result goes back to the model. All tools read the simulated data in `sample_data/<scenario>/`.
+
 **2. Chat models** - main model (Gemini) and optional backup (OpenAI / OpenRouter) - [agent.py](agent.py) `build_model()`, `build_backup_model()`
 ```python
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -102,12 +113,16 @@ ChatGoogleGenerativeAI(model=model_name(), temperature=0, rate_limiter=limiter, 
 ChatOpenAI(model=model, base_url=base_url, max_retries=2, timeout=120)
 ```
 
+**What it does:** the **brain**. These classes connect to the AI provider (Gemini as the main, free model; OpenAI/OpenRouter as the optional backup) with one common interface, so the rest of the code does not care which provider is used. `max_retries=0` on Gemini turns off its silent retries so our retry middleware can show them.
+
 **3. Rate limiter** - stays under the free-tier requests-per-minute limit - [agent.py](agent.py) `build_model()`
 ```python
 from langchain_core.rate_limiters import InMemoryRateLimiter
 
 limiter = InMemoryRateLimiter(requests_per_second=rpm / 60, check_every_n_seconds=0.5, max_bucket_size=1)
 ```
+
+**What it does:** the free Gemini tier allows only about 10 requests per minute. The limiter spaces out calls (by default 8 per minute) so the agent waits a few seconds between calls instead of being rejected.
 
 **4. Middleware** - planning tool, retries, fallback to the backup model - [agent.py](agent.py)
 ```python
@@ -117,6 +132,11 @@ TodoListMiddleware()                       # gives the supervisor `write_todos` 
 ModelRetryMiddleware(max_retries=4, retry_on=_is_retryable, initial_delay=15.0, max_delay=65.0)
 ModelFallbackMiddleware(backup)            # if Gemini still fails, use the backup model
 ```
+
+**What it does:** middleware wraps every model call, like a guard around it:
+- `TodoListMiddleware` adds the `write_todos` tool, so the supervisor writes and updates a **plan** (shown in the CLI and in the app's Plan panel).
+- `ModelRetryMiddleware` catches temporary errors (rate limit, overloaded server) and **retries** after waiting, printing a line so you know it is waiting, not stuck.
+- `ModelFallbackMiddleware` **switches to the backup model** if the main model still fails (e.g. the free daily quota is used up). Only active when a backup key is set.
 
 ### LangGraph
 
@@ -128,12 +148,16 @@ payload = {"messages": [{"role": "user", "content": task}]}
 yield from agent.stream(payload, stream_mode="values", config={"recursion_limit": 150})
 ```
 
+**What it does:** **runs** the agent. LangGraph executes the loop *model -> tool call -> tool result -> model ...* until the supervisor gives its final answer. `stream` returns the full state after every step, so we can show progress live instead of waiting for the end. `recursion_limit` is a safety cap: the run stops after 150 steps so a confused model cannot loop forever.
+
 **2. Read the graph state while it runs** (`todos`, `messages`, `files`) - [run_cli.py](run_cli.py) (same in [app.py](app.py))
 ```python
 for state in stream_investigation(agent, task):
     todos = state.get("todos")             # the supervisor's plan
     msgs = state.get("messages", [])       # AIMessage tool calls (e.g. `task log-analyzer`) and ToolMessage results
 ```
+
+**What it does:** the **state** is LangGraph's memory of the run: `messages` (every model reply and tool call), `todos` (the plan) and `files` (the virtual files). The CLI prints new tool calls and plan changes from it, and the Streamlit app uses it to update the Plan and Agent activity panels.
 
 ### Other files
 | File | Role |
