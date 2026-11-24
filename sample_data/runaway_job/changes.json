@@ -1,0 +1,21 @@
+[
+  {
+    "time": "2026-11-20 16:05",
+    "type": "deployment",
+    "summary": "Release v2.7.3 (bug fixes)",
+    "author": "ci-bot",
+    "ticket": "CHG-1031",
+    "diff": []
+  },
+  {
+    "time": "2026-11-23 08:57",
+    "type": "scheduled-job",
+    "summary": "Update report-export cron entry (add --full flag for month-end report)",
+    "author": "deploy",
+    "ticket": "CHG-1042",
+    "diff": [
+      "- 0 2 * * *  /opt/app/jobs/report_export.py",
+      "+ 0 9 * * *  /opt/app/jobs/report_export.py --full"
+    ]
+  }
+]

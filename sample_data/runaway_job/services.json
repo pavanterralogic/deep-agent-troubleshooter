@@ -1,0 +1,35 @@
+{
+  "snapshot_time": "09:20",
+  "services": [
+    {
+      "name": "app.service",
+      "state": "failed",
+      "detail": "restart loop, 5 restarts, start request repeated too quickly"
+    },
+    {
+      "name": "nginx.service",
+      "state": "active",
+      "detail": "running, upstream (app) unreachable"
+    },
+    {
+      "name": "postgresql.service",
+      "state": "active",
+      "detail": "running, 20/20 connections used, long-running SELECTs"
+    },
+    {
+      "name": "redis-server.service",
+      "state": "active",
+      "detail": "running normally"
+    },
+    {
+      "name": "cron.service",
+      "state": "active",
+      "detail": "running"
+    },
+    {
+      "name": "ssh.service",
+      "state": "active",
+      "detail": "running, PasswordAuthentication yes"
+    }
+  ]
+}

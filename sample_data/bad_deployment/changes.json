@@ -1,0 +1,26 @@
+[
+  {
+    "time": "2026-11-21 11:30",
+    "type": "config",
+    "summary": "nginx: switch access log to JSON format",
+    "author": "ops",
+    "ticket": "CHG-1037",
+    "diff": []
+  },
+  {
+    "time": "2026-11-23 10:00",
+    "type": "deployment",
+    "summary": "Release v2.8.0: refactor settings loader, add index on orders.created_at",
+    "author": "ci-bot",
+    "ticket": "CHG-1045",
+    "diff": [
+      "app.env:",
+      "- DATABASE_POOL_SIZE=20",
+      "- DATABASE_MAX_OVERFLOW=10",
+      "+ DATABASE_POOL_SIZE=20   # old name, no longer read by v2.8.0",
+      "+ DB_POOL_SIZE=2          # copied from local dev .env",
+      "+ DB_MAX_OVERFLOW=0",
+      "migrations: + 0042_add_index_orders_created_at"
+    ]
+  }
+]

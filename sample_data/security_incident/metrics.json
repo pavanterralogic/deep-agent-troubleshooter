@@ -1,0 +1,410 @@
+[
+  {
+    "time": "01:50",
+    "cpu_percent": 8.4,
+    "memory_percent": 48.5,
+    "load_1m": 0.31,
+    "swap_percent": 1.2,
+    "db_connections": 3
+  },
+  {
+    "time": "01:51",
+    "cpu_percent": 6.3,
+    "memory_percent": 46.3,
+    "load_1m": 0.25,
+    "swap_percent": 1.0,
+    "db_connections": 3
+  },
+  {
+    "time": "01:52",
+    "cpu_percent": 10.7,
+    "memory_percent": 48.7,
+    "load_1m": 0.34,
+    "swap_percent": 1.9,
+    "db_connections": 4
+  },
+  {
+    "time": "01:53",
+    "cpu_percent": 4.3,
+    "memory_percent": 46.2,
+    "load_1m": 0.4,
+    "swap_percent": 1.1,
+    "db_connections": 4
+  },
+  {
+    "time": "01:54",
+    "cpu_percent": 10.4,
+    "memory_percent": 46.4,
+    "load_1m": 0.39,
+    "swap_percent": 1.7,
+    "db_connections": 4
+  },
+  {
+    "time": "01:55",
+    "cpu_percent": 5.8,
+    "memory_percent": 49.7,
+    "load_1m": 0.21,
+    "swap_percent": 1.6,
+    "db_connections": 4
+  },
+  {
+    "time": "01:56",
+    "cpu_percent": 10.3,
+    "memory_percent": 47.2,
+    "load_1m": 0.29,
+    "swap_percent": 1.3,
+    "db_connections": 5
+  },
+  {
+    "time": "01:57",
+    "cpu_percent": 7.2,
+    "memory_percent": 47.6,
+    "load_1m": 0.27,
+    "swap_percent": 1.2,
+    "db_connections": 5
+  },
+  {
+    "time": "01:58",
+    "cpu_percent": 5.7,
+    "memory_percent": 48.1,
+    "load_1m": 0.33,
+    "swap_percent": 1.8,
+    "db_connections": 3
+  },
+  {
+    "time": "01:59",
+    "cpu_percent": 4.3,
+    "memory_percent": 46.6,
+    "load_1m": 0.39,
+    "swap_percent": 1.8,
+    "db_connections": 5
+  },
+  {
+    "time": "02:00",
+    "cpu_percent": 10.6,
+    "memory_percent": 48.1,
+    "load_1m": 0.31,
+    "swap_percent": 1.2,
+    "db_connections": 5
+  },
+  {
+    "time": "02:01",
+    "cpu_percent": 7.5,
+    "memory_percent": 47.6,
+    "load_1m": 0.28,
+    "swap_percent": 1.8,
+    "db_connections": 2
+  },
+  {
+    "time": "02:02",
+    "cpu_percent": 8.1,
+    "memory_percent": 48.8,
+    "load_1m": 0.3,
+    "swap_percent": 1.2,
+    "db_connections": 2
+  },
+  {
+    "time": "02:03",
+    "cpu_percent": 4.8,
+    "memory_percent": 48.9,
+    "load_1m": 0.34,
+    "swap_percent": 1.2,
+    "db_connections": 3
+  },
+  {
+    "time": "02:04",
+    "cpu_percent": 10.0,
+    "memory_percent": 47.6,
+    "load_1m": 0.33,
+    "swap_percent": 1.3,
+    "db_connections": 3
+  },
+  {
+    "time": "02:05",
+    "cpu_percent": 8.8,
+    "memory_percent": 48.1,
+    "load_1m": 0.43,
+    "swap_percent": 1.9,
+    "db_connections": 2
+  },
+  {
+    "time": "02:06",
+    "cpu_percent": 6.9,
+    "memory_percent": 48.7,
+    "load_1m": 0.5,
+    "swap_percent": 1.7,
+    "db_connections": 5
+  },
+  {
+    "time": "02:07",
+    "cpu_percent": 6.0,
+    "memory_percent": 48.1,
+    "load_1m": 0.26,
+    "swap_percent": 1.5,
+    "db_connections": 5
+  },
+  {
+    "time": "02:08",
+    "cpu_percent": 10.8,
+    "memory_percent": 48.9,
+    "load_1m": 0.28,
+    "swap_percent": 1.1,
+    "db_connections": 4
+  },
+  {
+    "time": "02:09",
+    "cpu_percent": 8.6,
+    "memory_percent": 48.6,
+    "load_1m": 0.34,
+    "swap_percent": 1.3,
+    "db_connections": 3
+  },
+  {
+    "time": "02:10",
+    "cpu_percent": 6.3,
+    "memory_percent": 48.8,
+    "load_1m": 0.27,
+    "swap_percent": 1.3,
+    "db_connections": 3
+  },
+  {
+    "time": "02:11",
+    "cpu_percent": 6.2,
+    "memory_percent": 46.7,
+    "load_1m": 0.36,
+    "swap_percent": 1.5,
+    "db_connections": 2
+  },
+  {
+    "time": "02:12",
+    "cpu_percent": 10.1,
+    "memory_percent": 47.6,
+    "load_1m": 0.31,
+    "swap_percent": 1.7,
+    "db_connections": 5
+  },
+  {
+    "time": "02:13",
+    "cpu_percent": 98.0,
+    "memory_percent": 56.8,
+    "load_1m": 10.28,
+    "swap_percent": 1.9,
+    "db_connections": 2
+  },
+  {
+    "time": "02:14",
+    "cpu_percent": 96.4,
+    "memory_percent": 58.0,
+    "load_1m": 9.55,
+    "swap_percent": 1.7,
+    "db_connections": 2
+  },
+  {
+    "time": "02:15",
+    "cpu_percent": 96.8,
+    "memory_percent": 55.1,
+    "load_1m": 10.42,
+    "swap_percent": 1.5,
+    "db_connections": 5
+  },
+  {
+    "time": "02:16",
+    "cpu_percent": 99.5,
+    "memory_percent": 56.6,
+    "load_1m": 8.74,
+    "swap_percent": 1.9,
+    "db_connections": 3
+  },
+  {
+    "time": "02:17",
+    "cpu_percent": 97.2,
+    "memory_percent": 56.9,
+    "load_1m": 8.58,
+    "swap_percent": 1.5,
+    "db_connections": 4
+  },
+  {
+    "time": "02:18",
+    "cpu_percent": 99.3,
+    "memory_percent": 57.4,
+    "load_1m": 9.04,
+    "swap_percent": 1.6,
+    "db_connections": 5
+  },
+  {
+    "time": "02:19",
+    "cpu_percent": 96.8,
+    "memory_percent": 55.5,
+    "load_1m": 9.66,
+    "swap_percent": 1.7,
+    "db_connections": 3
+  },
+  {
+    "time": "02:20",
+    "cpu_percent": 96.9,
+    "memory_percent": 56.8,
+    "load_1m": 9.53,
+    "swap_percent": 1.2,
+    "db_connections": 4
+  },
+  {
+    "time": "02:21",
+    "cpu_percent": 97.6,
+    "memory_percent": 55.3,
+    "load_1m": 8.7,
+    "swap_percent": 1.1,
+    "db_connections": 4
+  },
+  {
+    "time": "02:22",
+    "cpu_percent": 96.9,
+    "memory_percent": 57.0,
+    "load_1m": 8.73,
+    "swap_percent": 1.9,
+    "db_connections": 2
+  },
+  {
+    "time": "02:23",
+    "cpu_percent": 97.8,
+    "memory_percent": 57.5,
+    "load_1m": 9.8,
+    "swap_percent": 1.9,
+    "db_connections": 2
+  },
+  {
+    "time": "02:24",
+    "cpu_percent": 97.0,
+    "memory_percent": 55.4,
+    "load_1m": 8.85,
+    "swap_percent": 1.8,
+    "db_connections": 5
+  },
+  {
+    "time": "02:25",
+    "cpu_percent": 96.5,
+    "memory_percent": 57.0,
+    "load_1m": 10.39,
+    "swap_percent": 1.7,
+    "db_connections": 5
+  },
+  {
+    "time": "02:26",
+    "cpu_percent": 97.2,
+    "memory_percent": 56.7,
+    "load_1m": 10.2,
+    "swap_percent": 1.3,
+    "db_connections": 3
+  },
+  {
+    "time": "02:27",
+    "cpu_percent": 97.9,
+    "memory_percent": 55.9,
+    "load_1m": 10.42,
+    "swap_percent": 2.0,
+    "db_connections": 3
+  },
+  {
+    "time": "02:28",
+    "cpu_percent": 97.7,
+    "memory_percent": 57.9,
+    "load_1m": 10.39,
+    "swap_percent": 1.0,
+    "db_connections": 5
+  },
+  {
+    "time": "02:29",
+    "cpu_percent": 96.4,
+    "memory_percent": 55.3,
+    "load_1m": 9.01,
+    "swap_percent": 1.4,
+    "db_connections": 5
+  },
+  {
+    "time": "02:30",
+    "cpu_percent": 97.7,
+    "memory_percent": 55.9,
+    "load_1m": 9.18,
+    "swap_percent": 1.9,
+    "db_connections": 3
+  },
+  {
+    "time": "02:31",
+    "cpu_percent": 98.7,
+    "memory_percent": 57.0,
+    "load_1m": 9.78,
+    "swap_percent": 1.5,
+    "db_connections": 2
+  },
+  {
+    "time": "02:32",
+    "cpu_percent": 97.6,
+    "memory_percent": 57.0,
+    "load_1m": 10.36,
+    "swap_percent": 1.6,
+    "db_connections": 4
+  },
+  {
+    "time": "02:33",
+    "cpu_percent": 97.9,
+    "memory_percent": 57.7,
+    "load_1m": 10.42,
+    "swap_percent": 1.5,
+    "db_connections": 2
+  },
+  {
+    "time": "02:34",
+    "cpu_percent": 96.9,
+    "memory_percent": 55.2,
+    "load_1m": 9.96,
+    "swap_percent": 1.5,
+    "db_connections": 4
+  },
+  {
+    "time": "02:35",
+    "cpu_percent": 96.8,
+    "memory_percent": 55.8,
+    "load_1m": 9.97,
+    "swap_percent": 1.3,
+    "db_connections": 3
+  },
+  {
+    "time": "02:36",
+    "cpu_percent": 97.1,
+    "memory_percent": 57.5,
+    "load_1m": 10.49,
+    "swap_percent": 1.9,
+    "db_connections": 3
+  },
+  {
+    "time": "02:37",
+    "cpu_percent": 99.4,
+    "memory_percent": 57.4,
+    "load_1m": 10.45,
+    "swap_percent": 1.8,
+    "db_connections": 4
+  },
+  {
+    "time": "02:38",
+    "cpu_percent": 97.8,
+    "memory_percent": 55.6,
+    "load_1m": 9.86,
+    "swap_percent": 1.7,
+    "db_connections": 2
+  },
+  {
+    "time": "02:39",
+    "cpu_percent": 96.4,
+    "memory_percent": 56.8,
+    "load_1m": 9.59,
+    "swap_percent": 1.2,
+    "db_connections": 2
+  },
+  {
+    "time": "02:40",
+    "cpu_percent": 97.9,
+    "memory_percent": 57.5,
+    "load_1m": 9.68,
+    "swap_percent": 1.3,
+    "db_connections": 5
+  }
+]

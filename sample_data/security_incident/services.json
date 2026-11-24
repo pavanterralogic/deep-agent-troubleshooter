@@ -1,0 +1,35 @@
+{
+  "snapshot_time": "02:35",
+  "services": [
+    {
+      "name": "app.service",
+      "state": "active",
+      "detail": "running, workers timing out and restarting"
+    },
+    {
+      "name": "nginx.service",
+      "state": "active",
+      "detail": "running, upstream timeouts"
+    },
+    {
+      "name": "postgresql.service",
+      "state": "active",
+      "detail": "running"
+    },
+    {
+      "name": "redis-server.service",
+      "state": "active",
+      "detail": "running normally"
+    },
+    {
+      "name": "cron.service",
+      "state": "active",
+      "detail": "running"
+    },
+    {
+      "name": "ssh.service",
+      "state": "active",
+      "detail": "running, PasswordAuthentication yes"
+    }
+  ]
+}

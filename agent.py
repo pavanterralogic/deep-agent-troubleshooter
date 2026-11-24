@@ -1,11 +1,11 @@
 """
-Builds the supervisor Deep Agent with four specialist subagents.
+Builds the supervisor Deep Agent with five specialist subagents, for one chosen scenario.
 
 Deep Agents concepts demonstrated here:
   * Planning        - built-in `write_todos` tool (supervisor keeps a todo list)
   * Filesystem      - built-in virtual files (/findings/*.md, /reports/*.md) shared by all agents
   * Subagents       - `subagents=[...]`, each with its own prompt, tools and isolated context
-  * Tools           - custom tools from tools.py
+  * Tools           - custom tools from tools.py, bound to the scenario's data folder
 """
 import os
 from pathlib import Path
@@ -18,20 +18,19 @@ from langchain_core.rate_limiters import InMemoryRateLimiter
 from prompts import (
     LOG_ANALYZER_PROMPT,
     ROOT_CAUSE_PROMPT,
+    SECURITY_ANALYST_PROMPT,
     SERVER_DIAGNOSTICIAN_PROMPT,
     SOLUTION_ADVISOR_PROMPT,
     SUPERVISOR_PROMPT,
 )
-from tools import LOG_TOOLS, SERVER_TOOLS, get_system_metrics, search_logs
+from scenarios import DEFAULT_SCENARIO, SCENARIOS, scenario_dir
+from tools import make_tools
 
 load_dotenv()
 
 ROOT = Path(__file__).parent
 OUTPUT_DIR = ROOT / "output"
-DEFAULT_TASK = (
-    "My Linux server is not responding. CPU usage is high, some services are failing, and I am "
-    "seeing errors in the application logs. Investigate the issue and provide possible solutions."
-)
+DEFAULT_TASK = SCENARIOS[DEFAULT_SCENARIO]["task"]
 
 
 PROVIDER = os.getenv("LLM_PROVIDER", "gemini").lower()
@@ -132,25 +131,33 @@ def build_retry():
     )
 
 
-def build_agent():
+def build_agent(scenario: str = DEFAULT_SCENARIO):
+    """Build the supervisor + subagents with tools that read sample_data/<scenario>/."""
+    t = make_tools(scenario_dir(scenario))
     subagents = [
         {
             "name": "log-analyzer",
-            "description": "Analyzes application, syslog and nginx logs: error patterns, timeline, affected components, noise.",
+            "description": "Analyzes application, syslog, nginx and auth logs: error patterns, timeline, affected components, noise.",
             "system_prompt": LOG_ANALYZER_PROMPT,
-            "tools": LOG_TOOLS,
+            "tools": t.LOG_TOOLS,
         },
         {
             "name": "server-diagnostician",
-            "description": "Analyzes CPU, memory, load, swap, DB connections, processes, services and disk usage.",
+            "description": "Analyzes CPU, memory, load, swap, DB connections, processes, services, disk usage and recent changes/deployments.",
             "system_prompt": SERVER_DIAGNOSTICIAN_PROMPT,
-            "tools": SERVER_TOOLS,
+            "tools": t.SERVER_TOOLS,
+        },
+        {
+            "name": "security-analyst",
+            "description": "Checks for attacks/compromise: SSH brute force, suspicious logins, unknown processes, unusual outbound connections, unauthorized crontab changes. Use only when findings show suspicious signs.",
+            "system_prompt": SECURITY_ANALYST_PROMPT,
+            "tools": t.SECURITY_TOOLS,
         },
         {
             "name": "root-cause-analyst",
-            "description": "Reads the log and server findings, correlates them and determines the root cause. Run after the two analysts.",
+            "description": "Reads all findings files, correlates them and determines the root cause. Run after the analysts.",
             "system_prompt": ROOT_CAUSE_PROMPT,
-            "tools": [search_logs, get_system_metrics],
+            "tools": t.ROOT_CAUSE_TOOLS,
         },
         {
             "name": "solution-advisor",
@@ -195,11 +202,12 @@ def message_text(msg) -> str:
     return str(content)
 
 
-def save_outputs(state: dict) -> list[Path]:
-    """Write the agent virtual files (report + findings) to ./output on real disk."""
+def save_outputs(state: dict, scenario: str = "") -> list[Path]:
+    """Write the agent virtual files (report + findings) to ./output/<scenario>/ on real disk."""
     saved = []
+    base = OUTPUT_DIR / scenario if scenario else OUTPUT_DIR
     for path, entry in (state.get("files") or {}).items():
-        target = OUTPUT_DIR / path.lstrip("/")
+        target = base / path.lstrip("/")
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(file_text(entry), encoding="utf-8")
         saved.append(target)

@@ -1,0 +1,40 @@
+{
+  "snapshot_time": "02:35",
+  "connections": [
+    {
+      "state": "LISTEN",
+      "local": "0.0.0.0:22",
+      "remote": "*",
+      "pid": 701,
+      "process": "sshd"
+    },
+    {
+      "state": "LISTEN",
+      "local": "0.0.0.0:443",
+      "remote": "*",
+      "pid": 880,
+      "process": "nginx"
+    },
+    {
+      "state": "ESTAB",
+      "local": "10.0.4.2:48712",
+      "remote": "203.0.113.50:3333",
+      "pid": 6666,
+      "process": "kdevtmpfsi"
+    },
+    {
+      "state": "ESTAB",
+      "local": "127.0.0.1:41830",
+      "remote": "127.0.0.1:5432",
+      "pid": 9131,
+      "process": "gunicorn worker"
+    },
+    {
+      "state": "ESTAB",
+      "local": "10.0.4.2:22",
+      "remote": "10.0.4.5:52114",
+      "pid": 7120,
+      "process": "sshd: ops"
+    }
+  ]
+}

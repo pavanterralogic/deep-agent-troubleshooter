@@ -1,0 +1,264 @@
+2026-11-23 09:45:04 INFO     [http] GET /api/orders 200 130ms
+2026-11-23 09:45:06 INFO     [http] GET /api/health 200 71ms
+2026-11-23 09:45:25 INFO     [http] GET /api/products 200 108ms
+2026-11-23 09:46:02 INFO     [http] GET /api/products 200 36ms
+2026-11-23 09:46:05 INFO     [http] GET /api/products 200 95ms
+2026-11-23 09:46:26 INFO     [http] GET /api/checkout 200 33ms
+2026-11-23 09:46:58 INFO     [http] GET /api/orders 200 89ms
+2026-11-23 09:47:03 INFO     [http] GET /api/health 200 98ms
+2026-11-23 09:47:10 WARNING  [app] DeprecationWarning: pydantic v1 style validators will be removed in a future release
+2026-11-23 09:47:14 INFO     [http] GET /api/orders 200 105ms
+2026-11-23 09:47:52 INFO     [http] GET /api/orders 200 97ms
+2026-11-23 09:48:03 INFO     [http] GET /api/checkout 200 53ms
+2026-11-23 09:48:18 INFO     [http] GET /api/products 200 78ms
+2026-11-23 09:48:34 INFO     [http] GET /api/products 200 40ms
+2026-11-23 09:48:35 INFO     [http] GET /api/orders 200 134ms
+2026-11-23 09:49:06 INFO     [http] GET /api/products 200 99ms
+2026-11-23 09:49:06 INFO     [http] GET /api/customers 200 95ms
+2026-11-23 09:49:35 INFO     [http] GET /api/customers 200 129ms
+2026-11-23 09:49:40 INFO     [http] GET /api/health 200 49ms
+2026-11-23 09:50:13 INFO     [http] GET /api/health 200 88ms
+2026-11-23 09:50:27 INFO     [http] GET /api/health 200 124ms
+2026-11-23 09:50:29 INFO     [http] GET /api/customers 200 99ms
+2026-11-23 09:50:36 INFO     [http] GET /api/orders 200 32ms
+2026-11-23 09:51:05 INFO     [http] GET /api/products 200 98ms
+2026-11-23 09:51:19 INFO     [http] GET /api/customers 200 56ms
+2026-11-23 09:51:44 INFO     [http] GET /api/products 200 124ms
+2026-11-23 09:52:31 INFO     [http] GET /api/health 200 137ms
+2026-11-23 09:52:33 WARNING  [cache] Redis cache miss ratio 31% for key prefix 'product:'
+2026-11-23 09:52:38 INFO     [http] GET /api/customers 200 34ms
+2026-11-23 09:52:46 INFO     [http] GET /api/customers 200 82ms
+2026-11-23 09:53:09 INFO     [http] GET /api/customers 200 87ms
+2026-11-23 09:53:26 INFO     [http] GET /api/health 200 46ms
+2026-11-23 09:54:21 INFO     [http] GET /api/customers 200 113ms
+2026-11-23 09:54:36 INFO     [http] GET /api/health 200 126ms
+2026-11-23 09:54:42 INFO     [http] GET /api/orders 200 34ms
+2026-11-23 09:55:04 INFO     [http] GET /api/checkout 200 132ms
+2026-11-23 09:55:17 INFO     [http] GET /api/orders 200 85ms
+2026-11-23 09:55:31 INFO     [http] GET /api/health 200 99ms
+2026-11-23 09:56:03 INFO     [http] GET /api/orders 200 118ms
+2026-11-23 09:56:18 INFO     [http] GET /api/checkout 200 116ms
+2026-11-23 09:56:41 INFO     [http] GET /api/customers 200 98ms
+2026-11-23 09:56:56 INFO     [http] GET /api/checkout 200 110ms
+2026-11-23 09:57:03 INFO     [http] GET /api/checkout 200 52ms
+2026-11-23 09:57:29 INFO     [http] GET /api/orders 200 70ms
+2026-11-23 09:57:39 INFO     [http] GET /api/products 200 39ms
+2026-11-23 09:58:05 INFO     [http] GET /api/checkout 200 46ms
+2026-11-23 09:58:25 INFO     [http] GET /api/checkout 200 136ms
+2026-11-23 09:58:47 INFO     [http] GET /api/products 200 56ms
+2026-11-23 09:59:17 INFO     [http] GET /api/health 200 115ms
+2026-11-23 09:59:35 INFO     [http] GET /api/checkout 200 60ms
+2026-11-23 09:59:52 INFO     [http] GET /api/products 200 80ms
+2026-11-23 10:00:11 INFO     [http] GET /api/orders 200 44ms
+2026-11-23 10:00:14 INFO     [http] GET /api/checkout 200 44ms
+2026-11-23 10:00:20 INFO     [migrate] Applying migration 0042_add_index_orders_created_at ... OK (4.2s)
+2026-11-23 10:00:43 INFO     [http] GET /api/customers 200 138ms
+2026-11-23 10:00:46 INFO     [app] Starting app v2.8.0 with 8 gunicorn workers
+2026-11-23 10:00:47 INFO     [settings] Loaded settings from /opt/app/app.env (DB_POOL_SIZE=2, DB_MAX_OVERFLOW=0, DB_POOL_TIMEOUT=30)
+2026-11-23 10:00:47 INFO     [db.pool] Database pool initialised (size=2, overflow=0)
+2026-11-23 10:00:48 WARNING  [settings] Unknown setting 'DATABASE_POOL_SIZE' in app.env ignored (did you mean 'DB_POOL_SIZE'?)
+2026-11-23 10:01:00 INFO     [http] GET /api/products 200 6386ms
+2026-11-23 10:01:53 INFO     [http] GET /api/products 200 13652ms
+2026-11-23 10:02:08 INFO     [http] GET /api/health 200 15313ms
+2026-11-23 10:02:17 WARNING  [db.pool] Connection pool usage 2/2, 39 requests waiting
+2026-11-23 10:02:35 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:02:36 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:02:44 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:02:45 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:02:53 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:02:54 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:03:04 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:03:05 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:03:12 WARNING  [db.pool] Connection pool usage 2/2, 37 requests waiting
+2026-11-23 10:03:13 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:03:14 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:03:27 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:03:28 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:03:50 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:03:51 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:04:11 WARNING  [db.pool] Connection pool usage 2/2, 18 requests waiting
+2026-11-23 10:04:13 INFO     [http] GET /api/products 200 11219ms
+2026-11-23 10:04:25 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:04:26 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:04:29 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:04:30 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:04:38 INFO     [http] GET /api/products 200 4861ms
+2026-11-23 10:04:47 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:04:48 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:04:56 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:04:57 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:05:01 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:05:02 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:05:05 WARNING  [db.pool] Connection pool usage 2/2, 36 requests waiting
+2026-11-23 10:05:12 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:05:13 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:05:20 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:05:21 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:05:21 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:05:22 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:05:23 INFO     [http] GET /api/health 200 14055ms
+2026-11-23 10:05:46 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:05:47 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:06:07 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:06:08 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:06:16 WARNING  [db.pool] Connection pool usage 2/2, 27 requests waiting
+2026-11-23 10:06:40 WARNING  [healthcheck] Health check slow: /api/health 200 in 12.4s (threshold 2s)
+2026-11-23 10:06:56 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:06:57 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:07:01 WARNING  [db.pool] Connection pool usage 2/2, 20 requests waiting
+2026-11-23 10:07:25 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:07:26 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:07:31 INFO     [http] GET /api/orders 200 11634ms
+2026-11-23 10:07:48 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:07:49 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:07:52 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:07:53 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:07:54 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:07:55 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:08:02 WARNING  [db.pool] Connection pool usage 2/2, 26 requests waiting
+2026-11-23 10:08:21 INFO     [http] GET /api/products 200 16129ms
+2026-11-23 10:08:27 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:08:28 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:08:51 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:08:52 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:09:02 WARNING  [db.pool] Connection pool usage 2/2, 23 requests waiting
+2026-11-23 10:09:16 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:09:17 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:09:29 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:09:30 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:10:07 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:10:08 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:10:19 WARNING  [db.pool] Connection pool usage 2/2, 17 requests waiting
+2026-11-23 10:10:33 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:10:34 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:11:14 INFO     [http] GET /api/health 200 14047ms
+2026-11-23 10:11:17 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:11:18 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:11:18 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:11:19 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:11:20 WARNING  [db.pool] Connection pool usage 2/2, 28 requests waiting
+2026-11-23 10:11:32 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:11:33 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:12:00 WARNING  [db.pool] Connection pool usage 2/2, 10 requests waiting
+2026-11-23 10:12:06 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:12:07 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:12:15 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:12:16 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:12:31 INFO     [http] GET /api/products 200 9825ms
+2026-11-23 10:12:32 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:12:33 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:13:00 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:13:01 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:13:03 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:13:04 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:13:06 WARNING  [db.pool] Connection pool usage 2/2, 23 requests waiting
+2026-11-23 10:13:12 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:13:13 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:13:25 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:13:26 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:13:40 WARNING  [healthcheck] Health check slow: /api/health 200 in 12.4s (threshold 2s)
+2026-11-23 10:14:02 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:14:03 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:14:06 INFO     [http] GET /api/customers 200 7716ms
+2026-11-23 10:14:11 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:14:12 WARNING  [db.pool] Connection pool usage 2/2, 27 requests waiting
+2026-11-23 10:14:12 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:14:13 INFO     [http] GET /api/checkout 200 11907ms
+2026-11-23 10:14:44 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:14:45 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:15:02 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:15:03 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:15:10 WARNING  [db.pool] Connection pool usage 2/2, 29 requests waiting
+2026-11-23 10:15:11 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:15:12 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:15:13 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:15:14 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:16:05 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:16:06 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:16:16 WARNING  [db.pool] Connection pool usage 2/2, 21 requests waiting
+2026-11-23 10:16:32 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:16:33 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:16:46 INFO     [http] GET /api/customers 200 10485ms
+2026-11-23 10:16:52 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:16:53 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:17:01 WARNING  [db.pool] Connection pool usage 2/2, 34 requests waiting
+2026-11-23 10:17:08 INFO     [http] GET /api/products 200 4451ms
+2026-11-23 10:17:19 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:17:20 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:17:40 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:17:41 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:18:02 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:18:03 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:18:04 WARNING  [db.pool] Connection pool usage 2/2, 33 requests waiting
+2026-11-23 10:18:09 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:18:10 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:18:35 INFO     [http] GET /api/customers 200 6146ms
+2026-11-23 10:18:46 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:18:46 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:18:47 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:18:47 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:19:02 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:19:03 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:19:05 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:19:06 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:19:18 WARNING  [db.pool] Connection pool usage 2/2, 10 requests waiting
+2026-11-23 10:19:40 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:19:41 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:20:17 WARNING  [db.pool] Connection pool usage 2/2, 12 requests waiting
+2026-11-23 10:20:31 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:20:32 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:20:40 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:20:41 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:21:16 WARNING  [db.pool] Connection pool usage 2/2, 14 requests waiting
+2026-11-23 10:21:16 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:21:17 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:21:18 INFO     [http] GET /api/orders 200 12211ms
+2026-11-23 10:21:40 WARNING  [healthcheck] Health check slow: /api/health 200 in 12.4s (threshold 2s)
+2026-11-23 10:21:47 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:21:48 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:22:04 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:22:05 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:22:07 WARNING  [db.pool] Connection pool usage 2/2, 38 requests waiting
+2026-11-23 10:22:39 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:22:40 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:22:47 INFO     [http] GET /api/products 200 9796ms
+2026-11-23 10:22:49 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:22:50 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:22:54 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:22:55 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:22:58 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:22:59 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:23:00 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:23:01 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:23:03 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:23:04 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:23:09 INFO     [http] GET /api/health 200 12577ms
+2026-11-23 10:23:10 WARNING  [db.pool] Connection pool usage 2/2, 25 requests waiting
+2026-11-23 10:23:17 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:23:18 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:23:28 INFO     [http] GET /api/health 200 16722ms
+2026-11-23 10:23:39 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:23:40 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:24:09 WARNING  [db.pool] Connection pool usage 2/2, 38 requests waiting
+2026-11-23 10:24:18 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:24:19 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:24:19 ERROR    [http] GET /api/products 500 30008ms
+2026-11-23 10:24:20 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:24:29 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:24:30 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:24:30 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:24:31 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:24:39 INFO     [http] GET /api/products 200 15881ms
+2026-11-23 10:24:57 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:24:58 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:25:04 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:25:05 ERROR    [http] GET /api/orders 500 30008ms
+2026-11-23 10:25:09 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:25:10 ERROR    [http] GET /api/customers 500 30008ms
+2026-11-23 10:25:13 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:25:14 WARNING  [db.pool] Connection pool usage 2/2, 26 requests waiting
+2026-11-23 10:25:14 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:25:23 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:25:24 ERROR    [http] POST /api/checkout 500 30008ms
+2026-11-23 10:25:38 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 2 overflow 0 reached)
+2026-11-23 10:25:39 ERROR    [http] GET /api/customers 500 30008ms

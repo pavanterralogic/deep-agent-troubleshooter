@@ -1,20 +1,20 @@
 {
-  "snapshot_time": "09:20",
+  "snapshot_time": "10:20",
   "services": [
     {
       "name": "app.service",
-      "state": "failed",
-      "detail": "restart loop, 5 restarts, start request repeated too quickly"
+      "state": "active",
+      "detail": "running v2.8.0 since 10:00:44, health check slow (12s)"
     },
     {
       "name": "nginx.service",
       "state": "active",
-      "detail": "running, upstream (app) unreachable"
+      "detail": "running, many upstream timeouts"
     },
     {
       "name": "postgresql.service",
       "state": "active",
-      "detail": "running, 20/20 connections used, long-running SELECTs"
+      "detail": "running, only 2 connections from app (max_connections 100)"
     },
     {
       "name": "redis-server.service",
@@ -25,6 +25,11 @@
       "name": "cron.service",
       "state": "active",
       "detail": "running"
+    },
+    {
+      "name": "ssh.service",
+      "state": "active",
+      "detail": "running, PasswordAuthentication yes"
     }
   ]
 }

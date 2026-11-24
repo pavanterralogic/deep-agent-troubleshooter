@@ -13,7 +13,6 @@ except Exception:  # no secrets file locally: .env is used instead
     pass
 
 from agent import (
-    DEFAULT_TASK,
     PROVIDER,
     api_key_var,
     backup_label,
@@ -24,6 +23,7 @@ from agent import (
     save_outputs,
     stream_investigation,
 )
+from scenarios import DEFAULT_SCENARIO, SCENARIOS
 
 st.set_page_config(page_title="Deep Agent - IT Troubleshooter", page_icon="🛠️", layout="wide")
 
@@ -32,14 +32,15 @@ REPORT_PATH = "/reports/troubleshooting_report.md"
 FINDINGS = [
     ("Log analysis", "/findings/log_analysis.md"),
     ("Server diagnostics", "/findings/server_diagnostics.md"),
+    ("Security analysis", "/findings/security_analysis.md"),
     ("Root cause", "/findings/root_cause.md"),
     ("Solutions", "/findings/solutions.md"),
 ]
 
 
 @st.cache_resource(show_spinner=False)
-def get_agent():
-    return build_agent()
+def get_agent(scenario: str):
+    return build_agent(scenario)
 
 
 def render_plan(box, todos):
@@ -77,19 +78,26 @@ def render_results(files):
 # ------------------------------------------------------------------ sidebar
 with st.sidebar:
     st.header("Deep Agent prototype")
-    st.caption("Supervisor + 4 subagents on simulated logs and metrics. Nothing touches a real server.")
+    st.caption("Supervisor + 5 subagents on simulated logs and metrics. Nothing touches a real server.")
     st.markdown(f"**Model:** `{PROVIDER}` / `{model_name()}`")
     st.markdown(f"**{api_key_var()}:** " + ("✅ set" if os.getenv(api_key_var()) else "❌ missing (.env or Streamlit secrets)"))
     st.markdown(f"**Backup model:** `{backup_label()}`")
     st.divider()
     st.markdown(
         "**Agents**\n- 🧭 Supervisor (plans, delegates, reviews)\n- 📜 Log Analyzer\n- 🖥 Server Diagnostician\n"
-        "- 🔗 Root Cause Analyst\n- 🩹 Solution Advisor"
+        "- 🛡 Security Analyst (only when needed)\n- 🔗 Root Cause Analyst\n- 🩹 Solution Advisor"
     )
 
 # ------------------------------------------------------------------ main
 st.title("🛠️ Deep Agent - IT Infrastructure Troubleshooter")
-task = st.text_area("Describe the problem", value=DEFAULT_TASK, height=100)
+scenario = st.selectbox(
+    "Simulated incident",
+    list(SCENARIOS),
+    index=list(SCENARIOS).index(DEFAULT_SCENARIO),
+    format_func=lambda k: SCENARIOS[k]["title"],
+)
+# one text box per scenario, so switching scenario shows that scenario's problem description
+task = st.text_area("Describe the problem", value=SCENARIOS[scenario]["task"], height=100, key=f"task_{scenario}")
 run = st.button("Run investigation", type="primary")
 
 if run:
@@ -106,7 +114,7 @@ if run:
 
     events, seen, state = [], 0, {}
     try:
-        agent = get_agent()
+        agent = get_agent(scenario)
         with st.status("Investigating...", expanded=False) as status:
             for state in stream_investigation(agent, task):
                 render_plan(plan_box, state.get("todos"))
@@ -128,7 +136,7 @@ if run:
                 render_activity(activity_box, events)
             status.update(label="Investigation complete", state="complete")
         st.session_state["files"] = state.get("files") or {}
-        save_outputs(state)
+        save_outputs(state, scenario)
     except Exception as exc:  # show API/rate-limit/config errors in the UI
         st.error(f"Run failed: {exc}")
 

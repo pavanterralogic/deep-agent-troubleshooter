@@ -1,0 +1,40 @@
+{
+  "snapshot_time": "09:20",
+  "connections": [
+    {
+      "state": "LISTEN",
+      "local": "0.0.0.0:22",
+      "remote": "*",
+      "pid": 701,
+      "process": "sshd"
+    },
+    {
+      "state": "LISTEN",
+      "local": "0.0.0.0:443",
+      "remote": "*",
+      "pid": 880,
+      "process": "nginx"
+    },
+    {
+      "state": "ESTAB",
+      "local": "127.0.0.1:41822",
+      "remote": "127.0.0.1:5432",
+      "pid": 4821,
+      "process": "python report_export.py"
+    },
+    {
+      "state": "ESTAB",
+      "local": "127.0.0.1:6379",
+      "remote": "127.0.0.1:50122",
+      "pid": 912,
+      "process": "redis-server"
+    },
+    {
+      "state": "ESTAB",
+      "local": "10.0.4.2:22",
+      "remote": "10.0.4.5:52114",
+      "pid": 7120,
+      "process": "sshd: ops"
+    }
+  ]
+}

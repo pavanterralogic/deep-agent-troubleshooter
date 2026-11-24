@@ -1,0 +1,144 @@
+2026-11-23 08:50:06 INFO     [http] GET /api/products 200 119ms
+2026-11-23 08:50:14 INFO     [http] GET /api/customers 200 56ms
+2026-11-23 08:50:37 INFO     [http] GET /api/health 200 36ms
+2026-11-23 08:50:47 INFO     [http] GET /api/orders 200 28ms
+2026-11-23 08:51:05 INFO     [http] GET /api/orders 200 28ms
+2026-11-23 08:51:12 WARNING  [app] DeprecationWarning: pydantic v1 style validators will be removed in a future release
+2026-11-23 08:51:32 INFO     [http] GET /api/products 200 54ms
+2026-11-23 08:51:35 INFO     [http] GET /api/health 200 28ms
+2026-11-23 08:52:14 INFO     [http] GET /api/health 200 78ms
+2026-11-23 08:52:17 INFO     [http] GET /api/checkout 200 100ms
+2026-11-23 08:53:09 INFO     [http] GET /api/customers 200 60ms
+2026-11-23 08:53:27 INFO     [http] GET /api/products 200 114ms
+2026-11-23 08:54:05 INFO     [http] GET /api/customers 200 38ms
+2026-11-23 08:54:22 INFO     [http] GET /api/checkout 200 37ms
+2026-11-23 08:55:29 INFO     [http] GET /api/orders 200 118ms
+2026-11-23 08:55:40 WARNING  [tls] TLS certificate for api.internal.example expires in 29 days
+2026-11-23 08:55:51 INFO     [http] GET /api/health 200 58ms
+2026-11-23 08:55:59 INFO     [http] GET /api/health 200 40ms
+2026-11-23 08:56:12 INFO     [http] GET /api/customers 200 98ms
+2026-11-23 08:56:18 INFO     [http] GET /api/orders 200 95ms
+2026-11-23 08:56:55 INFO     [http] GET /api/health 200 138ms
+2026-11-23 08:57:14 INFO     [http] GET /api/orders 200 134ms
+2026-11-23 08:57:17 INFO     [http] GET /api/orders 200 73ms
+2026-11-23 08:57:18 INFO     [http] GET /api/products 200 123ms
+2026-11-23 08:57:42 INFO     [http] GET /api/orders 200 30ms
+2026-11-23 08:58:05 WARNING  [cache] Redis cache miss ratio 34% for key prefix 'product:'
+2026-11-23 08:58:23 INFO     [http] GET /api/customers 200 45ms
+2026-11-23 08:58:42 INFO     [http] GET /api/customers 200 51ms
+2026-11-23 08:58:59 INFO     [http] GET /api/customers 200 114ms
+2026-11-23 08:59:29 INFO     [http] GET /api/products 200 45ms
+2026-11-23 08:59:40 INFO     [http] GET /api/orders 200 102ms
+2026-11-23 08:59:46 INFO     [http] GET /api/products 200 93ms
+2026-11-23 08:59:59 INFO     [http] GET /api/checkout 200 59ms
+2026-11-23 09:00:03 INFO     [scheduler] Starting job report-export (pid 4821) triggered by cron
+2026-11-23 09:00:09 INFO     [report-export] Executing: SELECT * FROM orders JOIN order_items USING (order_id) JOIN customers USING (customer_id) -- no LIMIT, estimated rows=2400000
+2026-11-23 09:00:20 INFO     [http] GET /api/orders 200 128ms
+2026-11-23 09:00:43 INFO     [http] GET /api/health 200 53ms
+2026-11-23 09:00:49 INFO     [http] GET /api/customers 200 132ms
+2026-11-23 09:00:52 INFO     [http] GET /api/orders 200 54ms
+2026-11-23 09:01:13 INFO     [http] GET /api/customers 200 33ms
+2026-11-23 09:01:41 INFO     [http] GET /api/customers 200 52ms
+2026-11-23 09:01:45 INFO     [http] GET /api/health 200 137ms
+2026-11-23 09:02:07 WARNING  [db.pool] Connection pool usage 11/20
+2026-11-23 09:02:15 INFO     [http] GET /api/products 200 300ms
+2026-11-23 09:02:29 INFO     [http] GET /api/checkout 200 896ms
+2026-11-23 09:02:47 INFO     [http] GET /api/health 200 462ms
+2026-11-23 09:02:50 WARNING  [db.slow] Slow query detected (23.3s): SELECT * FROM orders WHERE customer_id = ?
+2026-11-23 09:03:03 INFO     [http] GET /api/checkout 200 909ms
+2026-11-23 09:03:10 INFO     [http] GET /api/orders 200 786ms
+2026-11-23 09:03:10 WARNING  [db.pool] Connection pool usage 14/20
+2026-11-23 09:03:25 INFO     [http] GET /api/checkout 200 836ms
+2026-11-23 09:03:32 INFO     [http] GET /api/customers 200 294ms
+2026-11-23 09:03:33 WARNING  [db.slow] Slow query detected (27.5s): SELECT * FROM orders WHERE customer_id = ?
+2026-11-23 09:04:15 WARNING  [db.pool] Connection pool usage 17/20
+2026-11-23 09:04:24 INFO     [http] GET /api/checkout 200 266ms
+2026-11-23 09:04:33 INFO     [http] GET /api/checkout 200 680ms
+2026-11-23 09:04:43 INFO     [http] GET /api/customers 200 206ms
+2026-11-23 09:04:48 INFO     [http] GET /api/orders 200 761ms
+2026-11-23 09:04:49 WARNING  [db.slow] Slow query detected (22.7s): SELECT * FROM orders WHERE customer_id = ?
+2026-11-23 09:05:04 WARNING  [db.pool] Connection pool usage 19/20
+2026-11-23 09:05:04 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:05:05 ERROR    [http] GET /api/orders 500 30012ms
+2026-11-23 09:05:28 WARNING  [db.slow] Slow query detected (13.1s): SELECT * FROM orders WHERE customer_id = ?
+2026-11-23 09:05:55 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:05:56 ERROR    [http] POST /api/checkout 500 30012ms
+2026-11-23 09:06:11 WARNING  [db.pool] Connection pool usage 20/20
+2026-11-23 09:06:17 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:06:18 ERROR    [http] GET /api/customers 500 30012ms
+2026-11-23 09:06:21 WARNING  [db.slow] Slow query detected (24.8s): SELECT * FROM orders WHERE customer_id = ?
+2026-11-23 09:06:32 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:06:33 ERROR    [http] GET /api/orders 500 30012ms
+2026-11-23 09:07:08 WARNING  [db.pool] Connection pool usage 20/20
+2026-11-23 09:07:08 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:07:09 ERROR    [http] GET /api/customers 500 30012ms
+2026-11-23 09:07:13 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:07:14 ERROR    [http] GET /api/customers 500 30012ms
+2026-11-23 09:07:39 WARNING  [db.slow] Slow query detected (13.0s): SELECT * FROM orders WHERE customer_id = ?
+2026-11-23 09:07:59 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:07:59 ERROR    [http] GET /api/customers 500 30012ms
+2026-11-23 09:08:03 WARNING  [db.pool] Connection pool usage 20/20
+2026-11-23 09:08:12 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:08:13 ERROR    [http] GET /api/orders 500 30012ms
+2026-11-23 09:08:30 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:08:31 ERROR    [http] GET /api/orders 500 30012ms
+2026-11-23 09:08:43 WARNING  [db.slow] Slow query detected (26.0s): SELECT * FROM orders WHERE customer_id = ?
+2026-11-23 09:08:50 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:08:51 ERROR    [http] POST /api/checkout 500 30012ms
+2026-11-23 09:08:51 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:08:52 ERROR    [http] POST /api/checkout 500 30012ms
+2026-11-23 09:09:22 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:09:23 ERROR    [http] POST /api/checkout 500 30012ms
+2026-11-23 09:09:30 WARNING  [db.pool] Retry limit exceeded (3/3) for request, giving up
+2026-11-23 09:09:42 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:09:43 ERROR    [http] POST /api/checkout 500 30012ms
+2026-11-23 09:10:03 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:10:04 ERROR    [http] GET /api/customers 500 30012ms
+2026-11-23 09:10:29 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:10:30 ERROR    [http] GET /api/customers 500 30012ms
+2026-11-23 09:10:41 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:10:42 ERROR    [http] GET /api/customers 500 30012ms
+2026-11-23 09:11:03 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:11:04 ERROR    [http] POST /api/checkout 500 30012ms
+2026-11-23 09:11:30 WARNING  [db.pool] Retry limit exceeded (3/3) for request, giving up
+2026-11-23 09:11:46 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:11:47 ERROR    [http] POST /api/checkout 500 30012ms
+2026-11-23 09:12:12 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:12:13 ERROR    [http] GET /api/customers 500 30012ms
+2026-11-23 09:12:15 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:12:16 ERROR    [http] GET /api/orders 500 30012ms
+2026-11-23 09:12:28 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:12:29 ERROR    [http] GET /api/orders 500 30012ms
+2026-11-23 09:13:06 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:13:07 ERROR    [http] GET /api/orders 500 30012ms
+2026-11-23 09:13:11 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:13:12 ERROR    [http] POST /api/checkout 500 30012ms
+2026-11-23 09:13:28 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:13:29 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:13:29 ERROR    [http] GET /api/customers 500 30012ms
+2026-11-23 09:13:30 ERROR    [http] GET /api/orders 500 30012ms
+2026-11-23 09:13:41 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:13:42 ERROR    [http] GET /api/customers 500 30012ms
+2026-11-23 09:13:55 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:13:56 ERROR    [http] GET /api/orders 500 30012ms
+2026-11-23 09:13:59 CRITICAL [worker] Worker pid 4902 exited unexpectedly (signal 9)
+2026-11-23 09:14:05 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:14:06 ERROR    [http] GET /api/orders 500 30012ms
+2026-11-23 09:14:10 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:14:11 ERROR    [http] POST /api/checkout 500 30012ms
+2026-11-23 09:14:20 CRITICAL [worker] Worker pid 5011 exited unexpectedly (signal 9)
+2026-11-23 09:14:31 ERROR    [db.pool] Database connection timeout after 30s (QueuePool limit of size 20 overflow 0 reached)
+2026-11-23 09:14:32 ERROR    [http] POST /api/checkout 500 30012ms
+2026-11-23 09:14:34 ERROR    [app] Failed to start application: [Errno 12] Cannot allocate memory
+2026-11-23 09:14:59 ERROR    [app] Failed to start application: database unavailable (connection pool could not be initialised)
+2026-11-23 09:15:27 ERROR    [app] Failed to start application: [Errno 12] Cannot allocate memory
+2026-11-23 09:15:53 ERROR    [app] Failed to start application: database unavailable (connection pool could not be initialised)
+2026-11-23 09:15:55 ERROR    [healthcheck] Health check failed: /api/health unreachable
+2026-11-23 09:16:20 ERROR    [app] Failed to start application: [Errno 12] Cannot allocate memory
+2026-11-23 09:16:56 ERROR    [healthcheck] Health check failed: /api/health unreachable
+2026-11-23 09:17:26 ERROR    [healthcheck] Health check failed: /api/health unreachable
+2026-11-23 09:18:13 ERROR    [healthcheck] Health check failed: /api/health unreachable
+2026-11-23 09:19:42 ERROR    [healthcheck] Health check failed: /api/health unreachable
+2026-11-23 09:20:00 ERROR    [healthcheck] Health check failed: /api/health unreachable
+2026-11-23 09:21:30 INFO     [report-export] Job report-export (pid 4821) still running: 1.9M of 2.4M rows fetched
+2026-11-23 09:21:34 ERROR    [healthcheck] Health check failed: /api/health unreachable

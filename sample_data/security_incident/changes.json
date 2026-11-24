@@ -1,0 +1,10 @@
+[
+  {
+    "time": "2026-11-20 16:05",
+    "type": "deployment",
+    "summary": "Release v2.7.3 (bug fixes)",
+    "author": "ci-bot",
+    "ticket": "CHG-1031",
+    "diff": []
+  }
+]

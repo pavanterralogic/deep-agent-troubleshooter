@@ -1,0 +1,304 @@
+2026-11-23 01:50:58 WARNING  [sshd] Invalid user test from 203.0.113.176 port 51408
+2026-11-23 01:57:19 WARNING  [sshd] Invalid user test from 203.0.113.199 port 44729
+2026-11-23 02:00:03 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 44008 ssh2
+2026-11-23 02:00:05 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 47089 ssh2
+2026-11-23 02:00:07 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 33404 ssh2
+2026-11-23 02:00:08 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 49364 ssh2
+2026-11-23 02:00:10 WARNING  [sshd] Failed password for root from 198.51.100.23 port 51149 ssh2
+2026-11-23 02:00:22 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 32855 ssh2
+2026-11-23 02:00:22 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 34611 ssh2
+2026-11-23 02:00:25 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 64969 ssh2
+2026-11-23 02:00:28 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 62171 ssh2
+2026-11-23 02:00:30 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 35877 ssh2
+2026-11-23 02:00:33 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 45644 ssh2
+2026-11-23 02:00:34 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 39765 ssh2
+2026-11-23 02:00:36 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 42782 ssh2
+2026-11-23 02:00:46 WARNING  [sshd] Failed password for root from 198.51.100.23 port 40946 ssh2
+2026-11-23 02:00:48 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 64986 ssh2
+2026-11-23 02:00:53 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 33553 ssh2
+2026-11-23 02:00:57 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 38233 ssh2
+2026-11-23 02:00:58 WARNING  [sshd] Failed password for root from 198.51.100.23 port 46260 ssh2
+2026-11-23 02:00:59 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 33413 ssh2
+2026-11-23 02:00:59 WARNING  [sshd] Disconnecting authenticating user root 198.51.100.23: Too many authentication failures [preauth]
+2026-11-23 02:01:01 WARNING  [sshd] Failed password for root from 198.51.100.23 port 64493 ssh2
+2026-11-23 02:01:07 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 32673 ssh2
+2026-11-23 02:01:12 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 60353 ssh2
+2026-11-23 02:01:17 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 46975 ssh2
+2026-11-23 02:01:19 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 59503 ssh2
+2026-11-23 02:01:21 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 35959 ssh2
+2026-11-23 02:01:24 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 60882 ssh2
+2026-11-23 02:01:25 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 50215 ssh2
+2026-11-23 02:01:26 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 54574 ssh2
+2026-11-23 02:01:26 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 61722 ssh2
+2026-11-23 02:01:29 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 40162 ssh2
+2026-11-23 02:01:36 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 31904 ssh2
+2026-11-23 02:01:39 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 40521 ssh2
+2026-11-23 02:01:45 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 64348 ssh2
+2026-11-23 02:01:50 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 39886 ssh2
+2026-11-23 02:01:52 WARNING  [sshd] Failed password for root from 198.51.100.23 port 61584 ssh2
+2026-11-23 02:01:53 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 61201 ssh2
+2026-11-23 02:01:59 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 44835 ssh2
+2026-11-23 02:02:03 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 36847 ssh2
+2026-11-23 02:02:06 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 38210 ssh2
+2026-11-23 02:02:06 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 30833 ssh2
+2026-11-23 02:02:13 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 33630 ssh2
+2026-11-23 02:02:15 WARNING  [sshd] Failed password for root from 198.51.100.23 port 36156 ssh2
+2026-11-23 02:02:19 WARNING  [sshd] Failed password for root from 198.51.100.23 port 38711 ssh2
+2026-11-23 02:02:19 WARNING  [sshd] Failed password for root from 198.51.100.23 port 39398 ssh2
+2026-11-23 02:02:24 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 53350 ssh2
+2026-11-23 02:02:31 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 44792 ssh2
+2026-11-23 02:02:32 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 64757 ssh2
+2026-11-23 02:02:34 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 31770 ssh2
+2026-11-23 02:02:36 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 62567 ssh2
+2026-11-23 02:02:37 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 48579 ssh2
+2026-11-23 02:02:38 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 44446 ssh2
+2026-11-23 02:02:39 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 39286 ssh2
+2026-11-23 02:02:44 WARNING  [sshd] Failed password for root from 198.51.100.23 port 64381 ssh2
+2026-11-23 02:02:45 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 46855 ssh2
+2026-11-23 02:02:46 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 33511 ssh2
+2026-11-23 02:02:46 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 52595 ssh2
+2026-11-23 02:02:46 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 38215 ssh2
+2026-11-23 02:02:49 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 31707 ssh2
+2026-11-23 02:02:53 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 53099 ssh2
+2026-11-23 02:02:57 WARNING  [sshd] Failed password for root from 198.51.100.23 port 59451 ssh2
+2026-11-23 02:02:58 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 45428 ssh2
+2026-11-23 02:02:59 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 58046 ssh2
+2026-11-23 02:02:59 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 39723 ssh2
+2026-11-23 02:03:00 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 49306 ssh2
+2026-11-23 02:03:03 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 33229 ssh2
+2026-11-23 02:03:04 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 38427 ssh2
+2026-11-23 02:03:05 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 41418 ssh2
+2026-11-23 02:03:07 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 40160 ssh2
+2026-11-23 02:03:09 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 30211 ssh2
+2026-11-23 02:03:10 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 50538 ssh2
+2026-11-23 02:03:16 WARNING  [sshd] Failed password for root from 198.51.100.23 port 35237 ssh2
+2026-11-23 02:03:19 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 51273 ssh2
+2026-11-23 02:03:24 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 52167 ssh2
+2026-11-23 02:03:24 WARNING  [sshd] Failed password for root from 198.51.100.23 port 59341 ssh2
+2026-11-23 02:03:26 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 63636 ssh2
+2026-11-23 02:03:27 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 43614 ssh2
+2026-11-23 02:03:33 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 59127 ssh2
+2026-11-23 02:03:36 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 61552 ssh2
+2026-11-23 02:03:36 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 58669 ssh2
+2026-11-23 02:03:37 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 54595 ssh2
+2026-11-23 02:03:39 WARNING  [sshd] Failed password for root from 198.51.100.23 port 52850 ssh2
+2026-11-23 02:03:40 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 55339 ssh2
+2026-11-23 02:03:43 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 43479 ssh2
+2026-11-23 02:03:44 WARNING  [sshd] Failed password for root from 198.51.100.23 port 40485 ssh2
+2026-11-23 02:03:44 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 56831 ssh2
+2026-11-23 02:03:47 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 35839 ssh2
+2026-11-23 02:03:52 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 49670 ssh2
+2026-11-23 02:03:52 WARNING  [sshd] Failed password for root from 198.51.100.23 port 64001 ssh2
+2026-11-23 02:03:54 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 61910 ssh2
+2026-11-23 02:03:59 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 61350 ssh2
+2026-11-23 02:03:59 WARNING  [sshd] Disconnecting authenticating user root 198.51.100.23: Too many authentication failures [preauth]
+2026-11-23 02:04:03 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 40530 ssh2
+2026-11-23 02:04:03 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 58004 ssh2
+2026-11-23 02:04:05 WARNING  [sshd] Failed password for root from 198.51.100.23 port 62110 ssh2
+2026-11-23 02:04:06 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 50014 ssh2
+2026-11-23 02:04:06 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 42641 ssh2
+2026-11-23 02:04:07 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 53825 ssh2
+2026-11-23 02:04:08 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 57531 ssh2
+2026-11-23 02:04:09 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 46672 ssh2
+2026-11-23 02:04:15 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 39193 ssh2
+2026-11-23 02:04:16 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 46036 ssh2
+2026-11-23 02:04:22 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 31263 ssh2
+2026-11-23 02:04:26 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 49978 ssh2
+2026-11-23 02:04:27 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 39897 ssh2
+2026-11-23 02:04:28 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 62311 ssh2
+2026-11-23 02:04:28 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 47618 ssh2
+2026-11-23 02:04:30 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 45292 ssh2
+2026-11-23 02:04:31 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 38073 ssh2
+2026-11-23 02:04:35 WARNING  [sshd] Invalid user oracle from 203.0.113.161 port 40907
+2026-11-23 02:04:36 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 40482 ssh2
+2026-11-23 02:04:40 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 30079 ssh2
+2026-11-23 02:04:45 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 33008 ssh2
+2026-11-23 02:04:47 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 48361 ssh2
+2026-11-23 02:04:48 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 51525 ssh2
+2026-11-23 02:04:50 WARNING  [sshd] Failed password for root from 198.51.100.23 port 56090 ssh2
+2026-11-23 02:04:51 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 54672 ssh2
+2026-11-23 02:04:52 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 43654 ssh2
+2026-11-23 02:04:53 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 36354 ssh2
+2026-11-23 02:04:58 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 57373 ssh2
+2026-11-23 02:04:58 WARNING  [sshd] Failed password for root from 198.51.100.23 port 57616 ssh2
+2026-11-23 02:04:58 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 52294 ssh2
+2026-11-23 02:05:02 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 57825 ssh2
+2026-11-23 02:05:05 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 48844 ssh2
+2026-11-23 02:05:05 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 59343 ssh2
+2026-11-23 02:05:06 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 58866 ssh2
+2026-11-23 02:05:13 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 57717 ssh2
+2026-11-23 02:05:15 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 31761 ssh2
+2026-11-23 02:05:25 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 45882 ssh2
+2026-11-23 02:05:25 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 33732 ssh2
+2026-11-23 02:05:31 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 32930 ssh2
+2026-11-23 02:05:31 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 35638 ssh2
+2026-11-23 02:05:33 WARNING  [sshd] Failed password for root from 198.51.100.23 port 59252 ssh2
+2026-11-23 02:05:35 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 32843 ssh2
+2026-11-23 02:05:44 WARNING  [sshd] Failed password for root from 198.51.100.23 port 32428 ssh2
+2026-11-23 02:05:44 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 63572 ssh2
+2026-11-23 02:05:46 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 63580 ssh2
+2026-11-23 02:05:47 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 42496 ssh2
+2026-11-23 02:05:48 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 58262 ssh2
+2026-11-23 02:05:49 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 58823 ssh2
+2026-11-23 02:05:50 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 33225 ssh2
+2026-11-23 02:05:51 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 44532 ssh2
+2026-11-23 02:05:54 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 56232 ssh2
+2026-11-23 02:05:55 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 38659 ssh2
+2026-11-23 02:05:57 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 39368 ssh2
+2026-11-23 02:05:58 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 56350 ssh2
+2026-11-23 02:06:09 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 64468 ssh2
+2026-11-23 02:06:10 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 49321 ssh2
+2026-11-23 02:06:15 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 41611 ssh2
+2026-11-23 02:06:17 WARNING  [sshd] Failed password for root from 198.51.100.23 port 43247 ssh2
+2026-11-23 02:06:24 WARNING  [sshd] Failed password for root from 198.51.100.23 port 31799 ssh2
+2026-11-23 02:06:26 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 31794 ssh2
+2026-11-23 02:06:26 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 32345 ssh2
+2026-11-23 02:06:28 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 39351 ssh2
+2026-11-23 02:06:28 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 48788 ssh2
+2026-11-23 02:06:29 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 43338 ssh2
+2026-11-23 02:06:29 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 34450 ssh2
+2026-11-23 02:06:33 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 55407 ssh2
+2026-11-23 02:06:36 WARNING  [sshd] Failed password for root from 198.51.100.23 port 41639 ssh2
+2026-11-23 02:06:36 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 42583 ssh2
+2026-11-23 02:06:38 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 30127 ssh2
+2026-11-23 02:06:39 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 56187 ssh2
+2026-11-23 02:06:42 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 42720 ssh2
+2026-11-23 02:06:43 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 59551 ssh2
+2026-11-23 02:06:45 WARNING  [sshd] Failed password for root from 198.51.100.23 port 33926 ssh2
+2026-11-23 02:06:46 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 34232 ssh2
+2026-11-23 02:06:46 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 63020 ssh2
+2026-11-23 02:06:49 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 46098 ssh2
+2026-11-23 02:06:50 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 40171 ssh2
+2026-11-23 02:06:50 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 64297 ssh2
+2026-11-23 02:06:51 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 63580 ssh2
+2026-11-23 02:06:53 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 39166 ssh2
+2026-11-23 02:06:59 WARNING  [sshd] Disconnecting authenticating user root 198.51.100.23: Too many authentication failures [preauth]
+2026-11-23 02:07:00 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 51172 ssh2
+2026-11-23 02:07:01 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 47309 ssh2
+2026-11-23 02:07:01 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 58889 ssh2
+2026-11-23 02:07:01 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 58972 ssh2
+2026-11-23 02:07:05 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 52601 ssh2
+2026-11-23 02:07:06 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 47767 ssh2
+2026-11-23 02:07:07 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 34953 ssh2
+2026-11-23 02:07:15 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 59978 ssh2
+2026-11-23 02:07:18 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 62502 ssh2
+2026-11-23 02:07:19 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 55180 ssh2
+2026-11-23 02:07:19 WARNING  [sshd] Failed password for root from 198.51.100.23 port 35093 ssh2
+2026-11-23 02:07:21 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 57692 ssh2
+2026-11-23 02:07:21 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 43722 ssh2
+2026-11-23 02:07:24 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 34870 ssh2
+2026-11-23 02:07:27 WARNING  [sshd] Failed password for root from 198.51.100.23 port 33102 ssh2
+2026-11-23 02:07:29 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 30046 ssh2
+2026-11-23 02:07:30 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 42938 ssh2
+2026-11-23 02:07:30 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 34661 ssh2
+2026-11-23 02:07:31 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 42938 ssh2
+2026-11-23 02:07:35 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 44263 ssh2
+2026-11-23 02:07:36 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 37773 ssh2
+2026-11-23 02:07:36 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 36778 ssh2
+2026-11-23 02:07:39 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 35564 ssh2
+2026-11-23 02:07:39 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 31183 ssh2
+2026-11-23 02:07:41 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 43770 ssh2
+2026-11-23 02:07:42 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 30034 ssh2
+2026-11-23 02:07:48 WARNING  [sshd] Failed password for root from 198.51.100.23 port 37001 ssh2
+2026-11-23 02:07:54 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 56816 ssh2
+2026-11-23 02:07:56 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 32329 ssh2
+2026-11-23 02:07:56 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 61849 ssh2
+2026-11-23 02:08:00 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 48787 ssh2
+2026-11-23 02:08:03 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 41068 ssh2
+2026-11-23 02:08:06 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 31506 ssh2
+2026-11-23 02:08:06 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 39064 ssh2
+2026-11-23 02:08:07 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 58471 ssh2
+2026-11-23 02:08:15 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 55139 ssh2
+2026-11-23 02:08:18 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 44400 ssh2
+2026-11-23 02:08:21 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 64541 ssh2
+2026-11-23 02:08:23 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 33290 ssh2
+2026-11-23 02:08:28 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 55807 ssh2
+2026-11-23 02:08:30 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 63756 ssh2
+2026-11-23 02:08:35 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 34321 ssh2
+2026-11-23 02:08:35 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 50614 ssh2
+2026-11-23 02:08:41 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 31358 ssh2
+2026-11-23 02:08:41 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 48577 ssh2
+2026-11-23 02:08:43 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 38753 ssh2
+2026-11-23 02:08:44 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 34224 ssh2
+2026-11-23 02:08:47 WARNING  [sshd] Failed password for root from 198.51.100.23 port 49126 ssh2
+2026-11-23 02:08:48 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 40911 ssh2
+2026-11-23 02:08:48 WARNING  [sshd] Failed password for root from 198.51.100.23 port 42482 ssh2
+2026-11-23 02:08:53 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 56167 ssh2
+2026-11-23 02:08:58 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 30057 ssh2
+2026-11-23 02:09:04 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 36905 ssh2
+2026-11-23 02:09:06 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 63018 ssh2
+2026-11-23 02:09:07 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 50911 ssh2
+2026-11-23 02:09:09 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 64827 ssh2
+2026-11-23 02:09:10 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 55371 ssh2
+2026-11-23 02:09:11 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 63282 ssh2
+2026-11-23 02:09:21 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 37674 ssh2
+2026-11-23 02:09:22 WARNING  [sshd] Failed password for root from 198.51.100.23 port 51791 ssh2
+2026-11-23 02:09:23 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 34944 ssh2
+2026-11-23 02:09:23 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 30471 ssh2
+2026-11-23 02:09:24 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 57635 ssh2
+2026-11-23 02:09:25 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 52691 ssh2
+2026-11-23 02:09:25 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 43486 ssh2
+2026-11-23 02:09:26 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 51468 ssh2
+2026-11-23 02:09:28 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 47722 ssh2
+2026-11-23 02:09:31 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 56864 ssh2
+2026-11-23 02:09:31 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 48650 ssh2
+2026-11-23 02:09:34 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 61430 ssh2
+2026-11-23 02:09:37 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 42432 ssh2
+2026-11-23 02:09:41 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 53141 ssh2
+2026-11-23 02:09:42 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 38149 ssh2
+2026-11-23 02:09:43 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 41069 ssh2
+2026-11-23 02:09:47 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 57190 ssh2
+2026-11-23 02:09:50 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 49412 ssh2
+2026-11-23 02:09:57 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 43999 ssh2
+2026-11-23 02:09:59 WARNING  [sshd] Disconnecting authenticating user root 198.51.100.23: Too many authentication failures [preauth]
+2026-11-23 02:10:02 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 41962 ssh2
+2026-11-23 02:10:06 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 57216 ssh2
+2026-11-23 02:10:06 WARNING  [sshd] Failed password for root from 198.51.100.23 port 31065 ssh2
+2026-11-23 02:10:06 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 51700 ssh2
+2026-11-23 02:10:11 WARNING  [sshd] Failed password for root from 198.51.100.23 port 47025 ssh2
+2026-11-23 02:10:11 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 45602 ssh2
+2026-11-23 02:10:13 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 46726 ssh2
+2026-11-23 02:10:27 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 60455 ssh2
+2026-11-23 02:10:27 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 37859 ssh2
+2026-11-23 02:10:28 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 33548 ssh2
+2026-11-23 02:10:30 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 31950 ssh2
+2026-11-23 02:10:33 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 58293 ssh2
+2026-11-23 02:10:36 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 41608 ssh2
+2026-11-23 02:10:38 WARNING  [sshd] Failed password for invalid user admin from 198.51.100.23 port 61441 ssh2
+2026-11-23 02:10:43 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 54552 ssh2
+2026-11-23 02:10:48 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 35668 ssh2
+2026-11-23 02:10:48 WARNING  [sshd] Failed password for invalid user ubuntu from 198.51.100.23 port 45206 ssh2
+2026-11-23 02:10:48 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 59741 ssh2
+2026-11-23 02:10:54 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 34579 ssh2
+2026-11-23 02:10:55 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 52095 ssh2
+2026-11-23 02:10:55 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 49209 ssh2
+2026-11-23 02:10:57 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 34155 ssh2
+2026-11-23 02:11:01 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 58817 ssh2
+2026-11-23 02:11:04 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 43727 ssh2
+2026-11-23 02:11:05 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 32153 ssh2
+2026-11-23 02:11:09 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 54577 ssh2
+2026-11-23 02:11:10 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 58991 ssh2
+2026-11-23 02:11:18 WARNING  [sshd] Invalid user pi from 203.0.113.107 port 44252
+2026-11-23 02:11:22 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 49184 ssh2
+2026-11-23 02:11:24 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 43338 ssh2
+2026-11-23 02:11:26 WARNING  [sshd] Failed password for root from 198.51.100.23 port 61448 ssh2
+2026-11-23 02:11:35 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 35283 ssh2
+2026-11-23 02:11:37 INFO     [sshd] Accepted password for deploy from 198.51.100.23 port 51422 ssh2
+2026-11-23 02:11:37 INFO     [systemd-logind] New session 813 of user deploy.
+2026-11-23 02:11:39 WARNING  [sshd] Failed password for postgres from 198.51.100.23 port 34996 ssh2
+2026-11-23 02:11:47 WARNING  [sshd] Failed password for root from 198.51.100.23 port 49991 ssh2
+2026-11-23 02:11:48 WARNING  [sshd] Failed password for invalid user user from 198.51.100.23 port 30653 ssh2
+2026-11-23 02:11:49 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 62575 ssh2
+2026-11-23 02:11:52 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 43679 ssh2
+2026-11-23 02:11:54 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 32412 ssh2
+2026-11-23 02:11:54 WARNING  [sshd] Failed password for deploy from 198.51.100.23 port 50760 ssh2
+2026-11-23 02:11:55 WARNING  [sshd] Failed password for invalid user test from 198.51.100.23 port 47021 ssh2
+2026-11-23 02:11:55 WARNING  [sshd] Failed password for invalid user git from 198.51.100.23 port 48246 ssh2
+2026-11-23 02:11:58 WARNING  [sshd] Failed password for invalid user oracle from 198.51.100.23 port 64587 ssh2
+2026-11-23 02:14:02 INFO     [sshd] Received disconnect from 198.51.100.23 port 51422:11: disconnected by user
+2026-11-23 02:18:09 WARNING  [sshd] Invalid user test from 203.0.113.117 port 33667
+2026-11-23 02:25:52 WARNING  [sshd] Invalid user test from 203.0.113.147 port 37152
+2026-11-23 02:31:15 INFO     [sshd] Accepted publickey for ops from 10.0.4.5 port 52114 ssh2: ED25519 SHA256:q1w2e3
+2026-11-23 02:31:15 INFO     [systemd-logind] New session 812 of user ops.
+2026-11-23 02:32:19 WARNING  [sshd] Invalid user pi from 203.0.113.139 port 42725
+2026-11-23 02:39:02 WARNING  [sshd] Invalid user oracle from 203.0.113.137 port 34203

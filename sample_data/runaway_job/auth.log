@@ -1,0 +1,9 @@
+2026-11-23 08:50:15 WARNING  [sshd] Invalid user test from 203.0.113.139 port 37892
+2026-11-23 08:56:02 INFO     [sshd] Accepted publickey for ops from 10.0.4.5 port 52114 ssh2: ED25519 SHA256:q1w2e3
+2026-11-23 08:56:02 INFO     [systemd-logind] New session 812 of user ops.
+2026-11-23 08:57:05 WARNING  [sshd] Invalid user test from 203.0.113.172 port 53983
+2026-11-23 08:57:30 INFO     [sudo] deploy : TTY=pts/1 ; PWD=/opt/app ; USER=deploy ; COMMAND=/usr/bin/crontab -e
+2026-11-23 09:04:52 WARNING  [sshd] Invalid user test from 203.0.113.162 port 54923
+2026-11-23 09:11:49 WARNING  [sshd] Invalid user test from 203.0.113.168 port 34207
+2026-11-23 09:18:30 WARNING  [sshd] Invalid user pi from 203.0.113.184 port 35410
+2026-11-23 09:25:33 WARNING  [sshd] Invalid user pi from 203.0.113.133 port 43865

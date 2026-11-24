@@ -1,0 +1,47 @@
+{
+  "snapshot_time": "02:35",
+  "cpu_cores": 8,
+  "total_memory_gb": 16,
+  "processes": [
+    {
+      "pid": 6666,
+      "user": "deploy",
+      "command": "/tmp/.X11-unix/.k/kdevtmpfsi -o 203.0.113.50:3333 --threads=8",
+      "cpu_percent": 781.4,
+      "memory_gb": 1.2,
+      "runtime": "22m"
+    },
+    {
+      "pid": 9120,
+      "user": "app",
+      "command": "gunicorn: master [app v2.7.3]",
+      "cpu_percent": 3.2,
+      "memory_gb": 0.3,
+      "runtime": "3d"
+    },
+    {
+      "pid": 1377,
+      "user": "postgres",
+      "command": "postgres: app_db app_user [local] idle",
+      "cpu_percent": 0.6,
+      "memory_gb": 0.6,
+      "runtime": "3d"
+    },
+    {
+      "pid": 912,
+      "user": "redis",
+      "command": "redis-server *:6379",
+      "cpu_percent": 0.4,
+      "memory_gb": 0.4,
+      "runtime": "3d"
+    },
+    {
+      "pid": 880,
+      "user": "www-data",
+      "command": "nginx: worker process",
+      "cpu_percent": 0.5,
+      "memory_gb": 0.1,
+      "runtime": "3d"
+    }
+  ]
+}
