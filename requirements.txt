@@ -1,0 +1,11 @@
+# Pinned to versions tested together (Python 3.12)
+deepagents==0.7.41
+langchain==1.5.2
+langchain-core==1.8.4
+langgraph==1.2.24
+langchain-google-genai==4.5.2
+google-genai==3.6.1
+langchain-groq==1.2.1
+langchain-openai==1.8.5
+streamlit==1.67.0
+python-dotenv==1.2.4

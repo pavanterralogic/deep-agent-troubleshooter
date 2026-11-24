@@ -1,0 +1,17 @@
+2026-11-23 08:52:00 INFO     [systemd] Started Daily apt download activities.
+2026-11-23 08:53:31 WARNING  [rsyslog] Disk usage on /var/log at 91% (consider log rotation)
+2026-11-23 08:57:41 INFO     [crontab] (deploy) REPLACE (deploy)
+2026-11-23 08:57:42 INFO     [crontab] (deploy) END EDIT (deploy)
+2026-11-23 09:00:01 INFO     [CRON] (deploy) CMD (/opt/app/jobs/report_export.py --full)
+2026-11-23 09:12:40 WARNING  [kernel] Memory cgroup stats: usage 15.6GB of 16GB, swap 6.4GB of 8GB in use
+2026-11-23 09:13:58 CRITICAL [kernel] Out of memory: Killed process 4902 (gunicorn) total-vm:3412880kB, anon-rss:1790220kB
+2026-11-23 09:14:19 CRITICAL [kernel] Out of memory: Killed process 5011 (gunicorn) total-vm:3398112kB, anon-rss:1765004kB
+2026-11-23 09:14:21 ERROR    [systemd] app.service: Main process exited, code=killed, status=9/KILL
+2026-11-23 09:14:21 ERROR    [systemd] app.service: Failed with result 'signal'.
+2026-11-23 09:14:31 INFO     [systemd] app.service: Scheduled restart job, restart counter is at 1.
+2026-11-23 09:14:58 INFO     [systemd] app.service: Scheduled restart job, restart counter is at 2.
+2026-11-23 09:15:24 INFO     [systemd] app.service: Scheduled restart job, restart counter is at 3.
+2026-11-23 09:15:50 INFO     [systemd] app.service: Scheduled restart job, restart counter is at 4.
+2026-11-23 09:16:17 INFO     [systemd] app.service: Scheduled restart job, restart counter is at 5.
+2026-11-23 09:16:40 ERROR    [systemd] app.service: Start request repeated too quickly.
+2026-11-23 09:16:40 ERROR    [systemd] Failed to start Application Service.

@@ -1,0 +1,19 @@
+{
+  "filesystems": [
+    {
+      "mount": "/",
+      "used_percent": 62,
+      "size_gb": 100
+    },
+    {
+      "mount": "/var/log",
+      "used_percent": 91,
+      "size_gb": 20
+    },
+    {
+      "mount": "/var/lib/postgresql",
+      "used_percent": 55,
+      "size_gb": 200
+    }
+  ]
+}

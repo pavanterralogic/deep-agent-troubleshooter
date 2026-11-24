@@ -1,0 +1,47 @@
+{
+  "snapshot_time": "09:20",
+  "cpu_cores": 8,
+  "total_memory_gb": 16,
+  "processes": [
+    {
+      "pid": 4821,
+      "user": "deploy",
+      "command": "python /opt/app/jobs/report_export.py --full",
+      "cpu_percent": 94.2,
+      "memory_gb": 9.8,
+      "runtime": "20m"
+    },
+    {
+      "pid": 1377,
+      "user": "postgres",
+      "command": "postgres: app_db app_user [local] SELECT",
+      "cpu_percent": 71.5,
+      "memory_gb": 2.1,
+      "runtime": "3d"
+    },
+    {
+      "pid": 1380,
+      "user": "postgres",
+      "command": "postgres: app_db app_user [local] SELECT",
+      "cpu_percent": 63.0,
+      "memory_gb": 1.9,
+      "runtime": "3d"
+    },
+    {
+      "pid": 912,
+      "user": "redis",
+      "command": "redis-server *:6379",
+      "cpu_percent": 1.2,
+      "memory_gb": 0.4,
+      "runtime": "3d"
+    },
+    {
+      "pid": 880,
+      "user": "www-data",
+      "command": "nginx: worker process",
+      "cpu_percent": 0.8,
+      "memory_gb": 0.1,
+      "runtime": "3d"
+    }
+  ]
+}

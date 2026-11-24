@@ -1,0 +1,330 @@
+[
+  {
+    "time": "08:50",
+    "cpu_percent": 22.0,
+    "memory_percent": 52.9,
+    "load_1m": 0.72,
+    "swap_percent": 1.8,
+    "db_connections": 8
+  },
+  {
+    "time": "08:51",
+    "cpu_percent": 24.6,
+    "memory_percent": 53.7,
+    "load_1m": 1.07,
+    "swap_percent": 1.0,
+    "db_connections": 10
+  },
+  {
+    "time": "08:52",
+    "cpu_percent": 30.0,
+    "memory_percent": 54.0,
+    "load_1m": 0.64,
+    "swap_percent": 1.4,
+    "db_connections": 8
+  },
+  {
+    "time": "08:53",
+    "cpu_percent": 21.3,
+    "memory_percent": 51.4,
+    "load_1m": 0.63,
+    "swap_percent": 1.5,
+    "db_connections": 8
+  },
+  {
+    "time": "08:54",
+    "cpu_percent": 21.6,
+    "memory_percent": 53.3,
+    "load_1m": 0.95,
+    "swap_percent": 2.2,
+    "db_connections": 10
+  },
+  {
+    "time": "08:55",
+    "cpu_percent": 20.1,
+    "memory_percent": 53.3,
+    "load_1m": 0.75,
+    "swap_percent": 2.3,
+    "db_connections": 7
+  },
+  {
+    "time": "08:56",
+    "cpu_percent": 22.6,
+    "memory_percent": 53.6,
+    "load_1m": 0.97,
+    "swap_percent": 1.3,
+    "db_connections": 8
+  },
+  {
+    "time": "08:57",
+    "cpu_percent": 26.0,
+    "memory_percent": 52.9,
+    "load_1m": 0.7,
+    "swap_percent": 2.3,
+    "db_connections": 8
+  },
+  {
+    "time": "08:58",
+    "cpu_percent": 25.1,
+    "memory_percent": 51.0,
+    "load_1m": 1.05,
+    "swap_percent": 1.1,
+    "db_connections": 9
+  },
+  {
+    "time": "08:59",
+    "cpu_percent": 28.3,
+    "memory_percent": 50.2,
+    "load_1m": 0.77,
+    "swap_percent": 1.3,
+    "db_connections": 8
+  },
+  {
+    "time": "09:00",
+    "cpu_percent": 30,
+    "memory_percent": 52.0,
+    "load_1m": 1.0,
+    "swap_percent": 3,
+    "db_connections": 8
+  },
+  {
+    "time": "09:01",
+    "cpu_percent": 52,
+    "memory_percent": 55.4,
+    "load_1m": 2.1,
+    "swap_percent": 9,
+    "db_connections": 10
+  },
+  {
+    "time": "09:02",
+    "cpu_percent": 74,
+    "memory_percent": 58.8,
+    "load_1m": 3.2,
+    "swap_percent": 15,
+    "db_connections": 12
+  },
+  {
+    "time": "09:03",
+    "cpu_percent": 89.6,
+    "memory_percent": 62.2,
+    "load_1m": 4.3,
+    "swap_percent": 21,
+    "db_connections": 14
+  },
+  {
+    "time": "09:04",
+    "cpu_percent": 92.4,
+    "memory_percent": 65.6,
+    "load_1m": 5.4,
+    "swap_percent": 27,
+    "db_connections": 16
+  },
+  {
+    "time": "09:05",
+    "cpu_percent": 95.1,
+    "memory_percent": 69.0,
+    "load_1m": 6.5,
+    "swap_percent": 33,
+    "db_connections": 18
+  },
+  {
+    "time": "09:06",
+    "cpu_percent": 93.6,
+    "memory_percent": 72.4,
+    "load_1m": 7.6,
+    "swap_percent": 39,
+    "db_connections": 20
+  },
+  {
+    "time": "09:07",
+    "cpu_percent": 89.1,
+    "memory_percent": 75.8,
+    "load_1m": 8.7,
+    "swap_percent": 45,
+    "db_connections": 20
+  },
+  {
+    "time": "09:08",
+    "cpu_percent": 97.5,
+    "memory_percent": 79.2,
+    "load_1m": 9.8,
+    "swap_percent": 51,
+    "db_connections": 20
+  },
+  {
+    "time": "09:09",
+    "cpu_percent": 94.9,
+    "memory_percent": 82.6,
+    "load_1m": 10.9,
+    "swap_percent": 57,
+    "db_connections": 20
+  },
+  {
+    "time": "09:10",
+    "cpu_percent": 89.5,
+    "memory_percent": 86.0,
+    "load_1m": 12.0,
+    "swap_percent": 63,
+    "db_connections": 20
+  },
+  {
+    "time": "09:11",
+    "cpu_percent": 88.4,
+    "memory_percent": 89.4,
+    "load_1m": 13.1,
+    "swap_percent": 69,
+    "db_connections": 20
+  },
+  {
+    "time": "09:12",
+    "cpu_percent": 91.7,
+    "memory_percent": 92.8,
+    "load_1m": 12.66,
+    "swap_percent": 75,
+    "db_connections": 20
+  },
+  {
+    "time": "09:13",
+    "cpu_percent": 92.3,
+    "memory_percent": 96.2,
+    "load_1m": 11.13,
+    "swap_percent": 81,
+    "db_connections": 20
+  },
+  {
+    "time": "09:14",
+    "cpu_percent": 91.6,
+    "memory_percent": 77.5,
+    "load_1m": 13.92,
+    "swap_percent": 70.4,
+    "db_connections": 20
+  },
+  {
+    "time": "09:15",
+    "cpu_percent": 91.6,
+    "memory_percent": 75.5,
+    "load_1m": 13.0,
+    "swap_percent": 73.5,
+    "db_connections": 6
+  },
+  {
+    "time": "09:16",
+    "cpu_percent": 96.8,
+    "memory_percent": 73.3,
+    "load_1m": 12.86,
+    "swap_percent": 71.5,
+    "db_connections": 3
+  },
+  {
+    "time": "09:17",
+    "cpu_percent": 96.6,
+    "memory_percent": 77.8,
+    "load_1m": 13.43,
+    "swap_percent": 78.8,
+    "db_connections": 2
+  },
+  {
+    "time": "09:18",
+    "cpu_percent": 89.8,
+    "memory_percent": 77.4,
+    "load_1m": 13.35,
+    "swap_percent": 74.1,
+    "db_connections": 3
+  },
+  {
+    "time": "09:19",
+    "cpu_percent": 90.7,
+    "memory_percent": 76.3,
+    "load_1m": 11.32,
+    "swap_percent": 78.7,
+    "db_connections": 5
+  },
+  {
+    "time": "09:20",
+    "cpu_percent": 90.2,
+    "memory_percent": 76.5,
+    "load_1m": 12.38,
+    "swap_percent": 73.1,
+    "db_connections": 3
+  },
+  {
+    "time": "09:21",
+    "cpu_percent": 90.2,
+    "memory_percent": 75.3,
+    "load_1m": 12.2,
+    "swap_percent": 72.8,
+    "db_connections": 2
+  },
+  {
+    "time": "09:22",
+    "cpu_percent": 97.7,
+    "memory_percent": 72.2,
+    "load_1m": 12.92,
+    "swap_percent": 74.0,
+    "db_connections": 6
+  },
+  {
+    "time": "09:23",
+    "cpu_percent": 91.3,
+    "memory_percent": 70.2,
+    "load_1m": 13.63,
+    "swap_percent": 72.6,
+    "db_connections": 6
+  },
+  {
+    "time": "09:24",
+    "cpu_percent": 97.6,
+    "memory_percent": 72.1,
+    "load_1m": 11.33,
+    "swap_percent": 74.3,
+    "db_connections": 4
+  },
+  {
+    "time": "09:25",
+    "cpu_percent": 92.4,
+    "memory_percent": 77.9,
+    "load_1m": 11.35,
+    "swap_percent": 79.0,
+    "db_connections": 3
+  },
+  {
+    "time": "09:26",
+    "cpu_percent": 90.5,
+    "memory_percent": 75.7,
+    "load_1m": 11.01,
+    "swap_percent": 79.3,
+    "db_connections": 6
+  },
+  {
+    "time": "09:27",
+    "cpu_percent": 94.9,
+    "memory_percent": 77.5,
+    "load_1m": 13.21,
+    "swap_percent": 72.0,
+    "db_connections": 5
+  },
+  {
+    "time": "09:28",
+    "cpu_percent": 88.7,
+    "memory_percent": 75.3,
+    "load_1m": 11.99,
+    "swap_percent": 73.1,
+    "db_connections": 2
+  },
+  {
+    "time": "09:29",
+    "cpu_percent": 95.2,
+    "memory_percent": 72.4,
+    "load_1m": 11.93,
+    "swap_percent": 74.1,
+    "db_connections": 5
+  },
+  {
+    "time": "09:30",
+    "cpu_percent": 95.0,
+    "memory_percent": 74.4,
+    "load_1m": 11.58,
+    "swap_percent": 76.6,
+    "db_connections": 5
+  }
+]
